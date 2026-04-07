@@ -1,0 +1,185 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriving Dancer Morning Update â€” 2026-04-07</title>
+  <style>
+    #review-gate-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(34, 22, 40, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
+    #review-gate-card {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      border: 1px solid #ead9e8;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22);
+      font-family: Arial, Helvetica, sans-serif;
+      color: #231728;
+    }
+    #review-gate-card h1 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+    #review-gate-card p {
+      margin: 0 0 14px;
+      line-height: 1.6;
+      color: #5f5365;
+    }
+    #review-gate-card input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ead9e8;
+      border-radius: 12px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      box-sizing: border-box;
+    }
+    #review-gate-card button {
+      width: 100%;
+      padding: 12px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg,#b64f8e,#6f5fd6);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    #review-gate-error {
+      min-height: 20px;
+      color: #b00020;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background:#f7f0f6;font-family:Arial,Helvetica,sans-serif;color:#231728;">
+  <div id="review-gate-overlay">
+    <div id="review-gate-card">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
+      <h1>Enter passcode</h1>
+      <p>This review page is lightly gated so only the intended reviewer opens it. Enter the passcode from the email to continue.</p>
+      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
+      <button id="review-passcode-submit" type="button">Open review page</button>
+      <div id="review-gate-error"></div>
+    </div>
+  </div>
+  <div id="review-page-content" style="display:none;">
+  <div style="padding:32px 16px;background:#f7f0f6;">
+    <div style="max-width:700px;margin:0 auto;background:#ffffff;border:1px solid #ead9e8;border-radius:20px;overflow:hidden;">
+      <div style="padding:28px 28px 20px;background:linear-gradient(135deg,#fff8fc 0%,#f6eef7 100%);border-bottom:1px solid #ead9e8;">
+        <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Thriving Dancer</div>
+        <div style="font-size:30px;line-height:1.2;font-weight:700;color:#231728;margin-bottom:10px;">Morning update</div>
+        <div style="font-size:15px;line-height:1.6;color:#5f5365;max-width:620px;">A concise view of current direction, visible progress, what is actively being built, and the later-direction questions that may help shape the next phases more cleanly.</div>
+      </div>
+
+      <div style="padding:24px 28px 10px;">
+        <p style="margin:0 0 18px;font-size:16px;line-height:1.7;color:#231728;">Hi Trista,</p>
+        <p style="margin:0 0 22px;font-size:16px;line-height:1.7;color:#231728;">Quick morning update on where things stand right now:</p>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#fff8fc;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Current direction</div>
+          <div style="font-size:15px;line-height:1.7;color:#231728;">Thriving Dancer is being shaped into a clearer guidance and education platform for serious young dancers, while the workbook is becoming the first more concrete product path inside that broader direction.</div>
+        </div>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#ffffff;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Meaningful progress</div>
+          <ul style="margin:0;padding-left:20px;color:#231728;font-size:15px;line-height:1.7;">
+            <li style="margin:0 0 10px;">The workbook page has moved well beyond a rough prototype and into a much cleaner pre-launch page direction.</li>
+            <li style="margin:0 0 10px;">The value proposition is clearer, the preview section is stronger, and the page now behaves more honestly as an interest-stage page rather than implying the workbook is already live.</li>
+            <li style="margin:0;">Behind the scenes, the workbook path is also more structured now: it has a stronger live-page candidate, a clearer waitlist implementation direction, and a better system for collecting later-stage roadmap questions before they become blockers.</li>
+          </ul>
+        </div>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#ffffff;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">What is being built now</div>
+          <div style="font-size:15px;line-height:1.7;color:#231728;">The workbook direction is being shaped into a first real live-page candidate, with special attention on making the preview and interest flow feel coherent, credible, and easy to carry forward into a real public-facing version.</div>
+        </div>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#ffffff;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Immediate next steps</div>
+          <ul style="margin:0;padding-left:20px;color:#231728;font-size:15px;line-height:1.7;">
+            <li style="margin:0 0 10px;">Keep refining the workbook live-page direction so it is ready for a real waitlist integration.</li>
+            <li style="margin:0;">Keep clarifying the next roadmap decisions that will matter once this first workbook direction is more settled.</li>
+          </ul>
+        </div>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#ffffff;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Review links</div>
+          <div style="font-size:15px;line-height:1.8;">
+            <div><a href="https://origin4124.github.io/" style="color:#6f5fd6;text-decoration:none;font-weight:600;">Public site homepage</a> <span style="color:#5f5365;">â€” current public-facing overview</span></div>
+            <div><a href="https://origin4124.github.io/start-here.html" style="color:#6f5fd6;text-decoration:none;font-weight:600;">Start here page</a> <span style="color:#5f5365;">â€” public orientation path</span></div>
+            <div><a href="https://origin4124.github.io/thriving-dancer-review-pages/workbook-live-page-candidate-v2.html" style="color:#6f5fd6;text-decoration:none;font-weight:600;">Workbook live-page candidate</a> <span style="color:#5f5365;">â€” current workbook page candidate for review</span></div>
+            <div style="color:#5f5365; margin-top:10px;">Only public GitHub-hosted links should appear in external review pages. Do not use local-network links like `127.0.0.1` for stakeholder review.</div>
+          </div>
+        </div>
+
+        <div style="margin:0 0 18px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#fcf7fb;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Questions for later direction</div>
+          <div style="font-size:15px;line-height:1.7;color:#231728;margin-bottom:12px;">Looking a little further ahead, here are a few questions that would help shape the next phases more clearly without needing an immediate answer today:</div>
+          <ol style="margin:0;padding-left:22px;color:#231728;font-size:15px;line-height:1.7;">
+            <li style="margin:0 0 10px;"><strong>Workbook delivery format</strong> â€” when the workbook first launches, do you imagine it mainly as a printable PDF, a digital fillable workbook, a physical printed workbook, or a staged rollout that starts with one format and later expands?</li>
+            <li style="margin:0 0 10px;"><strong>Buyer framing</strong> â€” do you want the first workbook page and launch to stay strongly dancer-first, or should parents be acknowledged more visibly as likely buyers from the beginning?</li>
+            <li style="margin:0;"><strong>Preview direction</strong> â€” when someone previews the workbook before launch, what would you most want them to see first: real sample pages, screenshots, a guided explanation, a founder note, or a short use-case walkthrough?</li>
+          </ol>
+        </div>
+
+        <div style="margin:0 0 8px;padding:18px 20px;border:1px solid #ead9e8;border-radius:16px;background:#ffffff;">
+          <div style="font-size:13px;font-weight:700;color:#b64f8e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Feedback / course correction</div>
+          <div style="font-size:15px;line-height:1.7;color:#231728;">If any part of the current direction feels off, incomplete, or not quite aligned, that feedback is useful. And if one part feels especially right, that is equally helpful so we know what to keep strengthening.</div>
+        </div>
+
+        <p style="margin:26px 0 0;font-size:15px;line-height:1.7;color:#231728;">Best,<br><strong>Origin</strong></p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    (function () {
+      const PASSCODE = 'morning';
+      const STORAGE_KEY = 'td-morning-report-review-gate-2026-04-07';
+      const overlay = document.getElementById('review-gate-overlay');
+      const content = document.getElementById('review-page-content');
+      const input = document.getElementById('review-passcode');
+      const button = document.getElementById('review-passcode-submit');
+      const error = document.getElementById('review-gate-error');
+
+      function unlock() {
+        overlay.style.display = 'none';
+        content.style.display = 'block';
+      }
+
+      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') {
+        unlock();
+        return;
+      }
+
+      button.addEventListener('click', function () {
+        if ((input.value || '').trim() === PASSCODE) {
+          sessionStorage.setItem(STORAGE_KEY, 'ok');
+          unlock();
+        } else {
+          error.textContent = 'That passcode is not correct.';
+          input.focus();
+        }
+      });
+
+      input.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') button.click();
+      });
+    })();
+  </script>
+</body>
+</html>
+

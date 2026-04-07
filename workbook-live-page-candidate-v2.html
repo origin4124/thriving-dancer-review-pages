@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriving Dancer Workbook — Live Page Candidate v2</title>
+  <style>
+    :root {
+      --bg: #f7f0f6;
+      --ink: #231728;
+      --muted: #5f5365;
+      --accent: #b64f8e;
+      --accent-2: #6f5fd6;
+      --line: #e7d7e6;
+      --panel: rgba(255,255,255,0.86);
+      --soft: #fdf9fc;
+      --shadow: 0 18px 50px rgba(61, 39, 72, 0.12);
+      --success-bg: #f1fbf5;
+      --success-line: #c7e9d2;
+      --success-ink: #24563a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(182,79,142,0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(111,95,214,0.16), transparent 28%),
+        linear-gradient(180deg, #fff8fc 0%, #f6eef7 46%, #f4eef5 100%);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 18px 72px; }
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(182,79,142,0.1);
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-size: .76rem;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.05; margin: 14px 0 14px; }
+    h2 { font-size: 1.6rem; margin: 0 0 12px; }
+    h3 { font-size: 1.05rem; margin: 0 0 6px; }
+    p { margin: 0 0 14px; color: var(--muted); }
+    .lead { font-size: 1.1rem; max-width: 58ch; }
+    .hero-card, .section, .quote-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.9);
+      box-shadow: var(--shadow);
+    }
+    .sample-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .sample-card {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      background: linear-gradient(180deg, #fff, #fcf7fb);
+    }
+    .sample-card .mini-label {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .sample-card p:last-child { margin-bottom: 0; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+    label {
+      display: block;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+    }
+    .hero-card { padding: 20px; }
+    .hero-card ul, .section ul { margin: 10px 0 0; padding-left: 20px; }
+    .hero-card li, .section li { margin-bottom: 8px; color: var(--muted); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #fff; }
+    .btn.secondary { background: white; color: var(--ink); border-color: var(--line); }
+    .grid-3, .grid-2 { display: grid; gap: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .section { padding: 22px; margin-top: 18px; }
+    .small { font-size: .95rem; }
+    .kicker { color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    .quote-card {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(252,247,251,0.95));
+    }
+    .quote-card blockquote {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .cta-band {
+      margin-top: 22px;
+      padding: 24px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, #2b1e38, #47307a);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .cta-band p, .cta-band li { color: rgba(255,255,255,0.84); }
+    .meta {
+      margin-top: 16px;
+      font-size: .92rem;
+      color: var(--muted);
+    }
+    .pill {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f6e8f2;
+      color: #7d3f68;
+      font-weight: 700;
+      font-size: .84rem;
+    }
+    .privacy-note {
+      margin-top: 12px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+    .bridge-copy {
+      margin-top: 10px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fcf7fb;
+    }
+    .bridge-copy p:last-child { margin-bottom: 0; }
+    .success-card {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--success-line);
+      border-radius: 18px;
+      background: var(--success-bg);
+    }
+    .success-card h3,
+    .success-card p { color: var(--success-ink); }
+    .candidate-note {
+      margin-top: 12px;
+      font-size: .9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    .preview-next-step {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-3, .grid-2, .form-grid, .sample-stack { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Thriving Dancer • workbook live-page candidate</div>
+        <h1>Help serious dancers recover from hard classes with more clarity, steadiness, and direction.</h1>
+        <p class="lead">The Thriving Dancer Journal / Workbook is designed to help dancers process corrections, calm the post-class spiral, and turn difficult training days into clearer next steps instead of carrying the whole class home as stress.</p>
+        <p>Rather than leaving class replaying mistakes for hours, the workbook gives a practical reflection flow: what happened, what matters, what to work on next, and how to reset before the next class.</p>
+        <div class="btn-row">
+          <a class="btn primary" href="#preview">Preview what’s inside</a>
+          <a class="btn secondary" href="#waitlist">Join the interest list</a>
+        </div>
+        <div class="meta">Live-page candidate intent: keep the validated workbook structure, but simplify the waitlist into a cleaner first real-build shape.</div>
+      </div>
+      <aside class="hero-card">
+        <h3>What this workbook helps a dancer do</h3>
+        <ul>
+          <li>Leave class with a clearer sense of what actually needs work.</li>
+          <li>Separate useful corrections from harsh self-talk.</li>
+          <li>Recover faster after discouraging classes or weeks.</li>
+          <li>Track patterns and growth instead of judging everything by one day.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section quote-card">
+      <div class="kicker">When this becomes useful</div>
+      <blockquote>"You leave class replaying every correction, every mistake, and every moment you felt behind — and by the time you get home, the whole day feels heavier than it should."</blockquote>
+      <p>This workbook is built for that exact moment: when a hard class starts lingering longer than it should, and a dancer needs a better way to reflect, reset, and return to training with perspective.</p>
+    </section>
+
+    <section class="section">
+      <div class="kicker">What changes for the dancer</div>
+      <div class="grid-3">
+        <div>
+          <h3>Clearer corrections</h3>
+          <p>The workbook helps a dancer pull out the useful technical note instead of collapsing into "I was terrible today."</p>
+        </div>
+        <div>
+          <h3>Faster emotional recovery</h3>
+          <p>Instead of carrying class stress through the rest of the day, the dancer has a process for settling, reflecting, and moving forward.</p>
+        </div>
+        <div>
+          <h3>More consistent progress</h3>
+          <p>Weekly reflection pages help the dancer notice patterns, build steadier habits, and keep a hard day from becoming a hard month.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section grid-2">
+      <div>
+        <div class="kicker">Who this is for</div>
+        <p>This workbook is for dancers in serious training who receive regular corrections, care deeply about improving, and need structure that supports discipline without turning every hard class into self-punishment.</p>
+        <div>
+          <span class="pill">serious training</span>
+          <span class="pill">correction-heavy days</span>
+          <span class="pill">reflection support</span>
+          <span class="pill">humane rigor</span>
+        </div>
+      </div>
+      <div>
+        <div class="kicker">What it helps with</div>
+        <ul>
+          <li>understanding what to work on next after a hard class</li>
+          <li>noticing destructive self-talk before it shapes the whole week</li>
+          <li>staying grounded during discouraging stretches of training</li>
+          <li>tracking real growth across time instead of judging one bad day</li>
+          <li>building a more repeatable recovery-and-reflection rhythm</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="preview">
+      <div class="kicker">Preview what’s inside</div>
+      <p>This section is meant to feel more like a peek into the workbook itself: the kind of prompts, reset questions, and reflection structure a dancer would actually see on the page.</p>
+      <div class="sample-stack">
+        <div class="sample-card">
+          <div class="mini-label">Sample page 01</div>
+          <h3>After-class reset</h3>
+          <p><strong>What happened in class today?</strong></p>
+          <p>Write down the corrections, combinations, or moments that are still echoing in your head.</p>
+          <p><strong>What actually matters most for next time?</strong></p>
+          <p>Choose one or two things to carry forward instead of carrying the whole class home.</p>
+        </div>
+        <div class="sample-card">
+          <div class="mini-label">Sample page 02</div>
+          <h3>Correction-processing prompt</h3>
+          <p><strong>What was the useful correction?</strong></p>
+          <p>Name the technical information clearly.</p>
+          <p><strong>What story did your brain add?</strong></p>
+          <p>Separate the real note from the shame spiral, comparison, or panic that came with it.</p>
+        </div>
+        <div class="sample-card">
+          <div class="mini-label">Sample page 03</div>
+          <h3>Weekly reflection</h3>
+          <p><strong>Where did you recover well this week?</strong></p>
+          <p>Notice the moments where you reset more quickly or stayed steadier than usual.</p>
+          <p><strong>What pattern needs support next week?</strong></p>
+          <p>Pick one mindset or habit pattern to work on instead of trying to fix everything at once.</p>
+        </div>
+      </div>
+      <div class="preview-next-step">
+        <p>If these sample pages feel like the kind of support that would actually help after hard classes, the next step is to join the interest list below so you can hear when the workbook is ready.</p>
+        <div class="btn-row">
+          <a class="btn secondary" href="#waitlist">Continue to the interest list</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Why this fits Thriving Dancer</div>
+      <p>The offer matches the larger Thriving Dancer philosophy: rigorous, but humane; serious, but not punishing; developmentally aware; and whole-person in perspective. The goal is not to remove pressure from ballet. The goal is to give dancers better support for handling the pressure that already exists.</p>
+    </section>
+
+    <section class="cta-band" id="interest">
+      <div class="kicker" style="color:#ffd3ec;">Next step after preview</div>
+      <h2 style="margin-top:0;">If the workbook preview feels like the kind of support you wish existed after hard classes, the next step is simple: join the list so you hear when it is ready.</h2>
+      <div class="btn-row">
+        <a class="btn primary" href="#waitlist">Continue to the interest list</a>
+      </div>
+      <p class="small" style="margin-top:14px;">Current candidate state: this page is still pre-launch and interest-capture-focused, not a live purchase page.</p>
+    </section>
+
+    <section class="section" id="waitlist">
+      <div class="kicker">Interest list</div>
+      <h2>Want to hear when the workbook is ready?</h2>
+      <p>Join the list to hear when the workbook is ready and when preview/release details are available.</p>
+      <div class="bridge-copy">
+        <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want release and preview updates without having to keep checking back.</p>
+      </div>
+      <form id="waitlist-form" action="#waitlist-success" method="get" novalidate>
+        <div class="form-grid">
+          <div>
+            <label for="first-name">First name</label>
+            <input id="first-name" name="firstName" type="text" placeholder="Your first name" autocomplete="given-name" required aria-describedby="waitlist-privacy waitlist-success-note" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="waitlist-privacy waitlist-success-note" />
+          </div>
+        </div>
+        <div class="btn-row">
+          <button class="btn primary" type="submit" aria-label="Join the interest list">Join the interest list</button>
+          <a class="btn secondary" href="#preview">Back to preview</a>
+        </div>
+        <p class="privacy-note" id="waitlist-privacy">We’ll only use your information for Thriving Dancer workbook/project updates. No spam.</p>
+      </form>
+      <div class="success-card" id="waitlist-success" aria-live="polite">
+        <h3>You’re on the list</h3>
+        <p id="waitlist-success-note">Thanks — we’ll let you know when the workbook is ready and when preview or release details are available.</p>
+        <p>In the meantime, you can keep exploring the workbook preview above.</p>
+      </div>
+      <p class="candidate-note">Implementation placeholder: the next real integration should replace this prototype submit action with a real waitlist path, while keeping the same lightweight field set, privacy note, and confirmation-state language unless a chosen tool cleanly supports more.</p>
+    </section>
+  </main>
+</body>
+</html>
