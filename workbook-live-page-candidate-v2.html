@@ -375,16 +375,16 @@
       <div class="btn-row">
         <a class="btn primary" href="#waitlist">Continue to the interest list</a>
       </div>
-      <p class="small" style="margin-top:14px;">This page is still pre-launch and interest-focused rather than a live purchase page. Launch planning should leave room for both a digital fillable workbook and a printed physical workbook.</p>
+      <p class="small" style="margin-top:14px;">This is an early-access invitation, not a checkout page. The next step here is simply hearing when the workbook is ready, while launch planning still leaves room for both a digital fillable workbook and a printed physical workbook.</p>
     </section>
 
     <section class="section" id="waitlist">
       <div class="kicker">Interest list</div>
       <h2>Want to hear when the workbook is ready?</h2>
-      <p>Join the list to hear when the workbook is ready, when preview details are worth sharing, and when first release information becomes available.</p>
+      <p>Join the list to hear when the workbook is ready, when there is a meaningful preview update worth seeing, and when early release details become available.</p>
       <div class="bridge-copy">
-        <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want meaningful updates without having to keep checking back.</p>
-        <p class="small">The goal here is simple: early access to the right updates, not a flood of extra email.</p>
+        <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want workbook-specific updates without having to keep checking back.</p>
+        <p class="small">You are not joining a generic newsletter — just a short list for relevant workbook updates when there is something genuinely useful to share.</p>
       </div>
       <div class="launch-note preview" id="waitlist-launch-note" aria-live="polite">
         <strong>Current stage:</strong> the interest list is open for early workbook updates while the first release keeps taking shape.
@@ -411,21 +411,21 @@
           <button class="btn primary" type="submit" id="waitlist-submit" aria-label="Join the interest list">Join the interest list</button>
           <a class="btn secondary" href="#preview">Back to preview</a>
         </div>
-        <p class="privacy-note" id="waitlist-privacy">We’ll only use your information for Thriving Dancer workbook/project updates. No spam. <a href="/thriving-dancer-review-pages/workbook-waitlist-privacy.html">Read the privacy note</a>.</p>
+        <p class="privacy-note" id="waitlist-privacy">We’ll only use your information for Thriving Dancer workbook/project updates related to this workbook. No spam, no generic marketing list. <a href="/thriving-dancer-review-pages/workbook-waitlist-privacy.html">Read the privacy note</a>.</p>
         <div class="trust-points" aria-label="Interest list expectations">
           <h3>What to expect</h3>
           <ul>
-            <li>A small number of relevant updates when there is something genuinely worth sharing.</li>
-            <li>First-release, preview, and workbook-specific news only — not a generic marketing list.</li>
-            <li>An easy unsubscribe path whenever email updates are no longer useful.</li>
+            <li>Occasional updates only when there is something genuinely worth sharing.</li>
+            <li>Workbook-specific preview, release, and early-access news — not a generic marketing list.</li>
+            <li>An easy unsubscribe link in any email if the updates stop being useful.</li>
           </ul>
         </div>
         <p class="form-status" id="waitlist-status" aria-live="polite"></p>
       </form>
       <div class="success-card" id="waitlist-success" aria-live="polite" hidden>
         <h3>You’re on the list</h3>
-        <p id="waitlist-success-note">Thanks — we’ll let you know when the workbook is ready and when preview or release details are available.</p>
-        <p>In the meantime, you can keep exploring the workbook preview above.</p>
+        <p id="waitlist-success-note">Thanks — you’re on the list for workbook-specific updates, including meaningful preview notes and first-release details.</p>
+        <p>In the meantime, you can keep exploring the workbook preview above or simply wait for the next useful update.</p>
       </div>
       <p class="candidate-note">Early access is intentionally simple here: just enough information to share launch updates without creating a heavy intake process.</p>
     </section>
@@ -462,15 +462,15 @@
         form.dataset.privacyPolicyUrl = merged.privacyPolicyUrl;
         form.dataset.successMessage = merged.successMessage;
         if (merged.privacyPolicyUrl) {
-          privacyNote.innerHTML = `We’ll only use your information for Thriving Dancer workbook/project updates. No spam. <a href="${merged.privacyPolicyUrl}" target="_blank" rel="noopener">Privacy policy</a>`;
+          privacyNote.innerHTML = `We’ll only use your information for Thriving Dancer workbook/project updates related to this workbook. No spam, no generic marketing list. <a href="${merged.privacyPolicyUrl}" target="_blank" rel="noopener">Privacy policy</a>`;
         } else {
-          privacyNote.textContent = 'We’ll only use your information for Thriving Dancer workbook/project updates. No spam.';
+          privacyNote.textContent = 'We’ll only use your information for Thriving Dancer workbook/project updates related to this workbook. No spam, no generic marketing list.';
         }
         const liveMode = merged.submitMode !== 'placeholder' && Boolean((merged.endpoint || '').trim());
         launchNote.className = `launch-note ${liveMode ? 'ready' : 'preview'}`;
         launchNote.innerHTML = liveMode
-          ? '<strong>Current stage:</strong> the interest list is live now for early workbook updates.'
-          : '<strong>Current stage:</strong> the interest list is open for early workbook updates while the first release keeps taking shape.';
+          ? '<strong>Current stage:</strong> the interest list is live now for workbook-specific early updates.'
+          : '<strong>Current stage:</strong> the interest list is open for workbook-specific early updates while the first release keeps taking shape.';
         return merged;
       };
 
