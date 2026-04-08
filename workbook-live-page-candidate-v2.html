@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thriving Dancer Workbook — Live Page Candidate v2</title>
+  <title>Thriving Dancer Workbook Preview</title>
   <style>
     :root {
       --bg: #f7f0f6;
@@ -177,6 +177,24 @@
       background: #fcf7fb;
     }
     .bridge-copy p:last-child { margin-bottom: 0; }
+    .launch-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+    .launch-note strong { color: var(--ink); }
+    .launch-note.ready {
+      background: #f7fbff;
+      border-color: #d7e8fb;
+    }
+    .launch-note.preview {
+      background: #fff9fc;
+      border-color: #efd9e8;
+    }
     .success-card {
       margin-top: 18px;
       padding: 16px 18px;
@@ -184,6 +202,15 @@
       border-radius: 18px;
       background: var(--success-bg);
     }
+    .success-card[hidden] { display: none; }
+    .form-status {
+      margin-top: 14px;
+      font-size: .94rem;
+      color: var(--muted);
+      min-height: 1.4em;
+    }
+    .form-status.error { color: #9a2f54; }
+    .form-status.success { color: var(--success-ink); }
     .success-card h3,
     .success-card p { color: var(--success-ink); }
     .candidate-note {
@@ -206,7 +233,7 @@
   <main class="wrap">
     <section class="hero">
       <div>
-        <div class="eyebrow">Thriving Dancer • workbook live-page candidate</div>
+        <div class="eyebrow">Thriving Dancer workbook preview</div>
         <h1>Help serious dancers reflect, reset, and move forward after hard classes.</h1>
         <p class="lead">The Thriving Dancer Journal / Workbook is designed to help dancers process corrections, calm the post-class spiral, and turn difficult training days into clearer next steps with more growth-minded, constructive reflection.</p>
         <p>Rather than leaving class replaying mistakes for hours, the workbook gives a practical reflection flow: what happened, what matters, what to work on next, and how to return to the next class with steadier focus instead of self-criticism.</p>
@@ -214,7 +241,7 @@
           <a class="btn primary" href="#preview">Preview what’s inside</a>
           <a class="btn secondary" href="#waitlist">Join the interest list</a>
         </div>
-        <div class="meta">Live-page candidate intent: keep the validated workbook structure, but simplify the waitlist into a cleaner first real-build shape.</div>
+        <div class="meta">This preview introduces the workbook direction and offers an early way to raise a hand for launch updates.</div>
       </div>
       <aside class="hero-card">
         <h3>What this workbook helps a dancer do</h3>
@@ -329,17 +356,23 @@
       <div class="btn-row">
         <a class="btn primary" href="#waitlist">Continue to the interest list</a>
       </div>
-      <p class="small" style="margin-top:14px;">Current candidate state: this page is still pre-launch and interest-capture-focused, not a live purchase page. Launch planning should leave room for both a digital fillable workbook and a printed physical workbook.</p>
+      <p class="small" style="margin-top:14px;">This page is still pre-launch and interest-focused rather than a live purchase page. Launch planning should leave room for both a digital fillable workbook and a printed physical workbook.</p>
     </section>
 
     <section class="section" id="waitlist">
       <div class="kicker">Interest list</div>
       <h2>Want to hear when the workbook is ready?</h2>
-      <p>Join the list to hear when the workbook is ready and when preview, format, and release details are available.</p>
+      <p>Join the list to hear when the workbook is ready and when preview or release details are available.</p>
       <div class="bridge-copy">
         <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want release and preview updates without having to keep checking back.</p>
       </div>
-      <form id="waitlist-form" action="#waitlist-success" method="get" novalidate>
+      <div class="launch-note preview" id="waitlist-launch-note" aria-live="polite">
+        <strong>Current stage:</strong> this page is in pre-release preview mode while the first real email-capture hookup is being finalized.
+      </div>
+      <form id="waitlist-form" action="#waitlist-success" method="post" novalidate data-submit-mode="placeholder" data-endpoint="" data-success-mode="inline-success" data-redirect-url="" data-tool-label="not-configured" data-privacy-policy-url="" data-success-message="" data-config-source="window.__THRIVING_DANCER_WORKBOOK_WAITLIST__">
+        <input type="hidden" name="source" value="workbook-live-page-candidate-v2" />
+        <input type="hidden" name="interest" value="workbook" />
+        <input type="hidden" name="pageVariant" value="founder-informed-copy-pass" />
         <div class="form-grid">
           <div>
             <label for="first-name">First name</label>
@@ -350,19 +383,189 @@
             <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required aria-describedby="waitlist-privacy waitlist-success-note" />
           </div>
         </div>
+        <div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+          <label for="company-name">Company</label>
+          <input id="company-name" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
         <div class="btn-row">
-          <button class="btn primary" type="submit" aria-label="Join the interest list">Join the interest list</button>
+          <button class="btn primary" type="submit" id="waitlist-submit" aria-label="Join the interest list">Join the interest list</button>
           <a class="btn secondary" href="#preview">Back to preview</a>
         </div>
         <p class="privacy-note" id="waitlist-privacy">We’ll only use your information for Thriving Dancer workbook/project updates. No spam.</p>
+        <p class="form-status" id="waitlist-status" aria-live="polite"></p>
       </form>
-      <div class="success-card" id="waitlist-success" aria-live="polite">
+      <div class="success-card" id="waitlist-success" aria-live="polite" hidden>
         <h3>You’re on the list</h3>
         <p id="waitlist-success-note">Thanks — we’ll let you know when the workbook is ready and when preview or release details are available.</p>
         <p>In the meantime, you can keep exploring the workbook preview above.</p>
       </div>
-      <p class="candidate-note">Implementation placeholder: the next real integration should replace this prototype submit action with a real waitlist path, while keeping the same lightweight field set, privacy note, and confirmation-state language unless a chosen tool cleanly supports more.</p>
+      <p class="candidate-note">Early access is intentionally simple here: just enough information to share launch updates without creating a heavy intake process.</p>
     </section>
   </main>
+  <script src="./workbook-waitlist-config.runtime.js"></script>
+  <script>
+    (() => {
+      const form = document.getElementById('waitlist-form');
+      const successCard = document.getElementById('waitlist-success');
+      const status = document.getElementById('waitlist-status');
+      const submitButton = document.getElementById('waitlist-submit');
+      const launchNote = document.getElementById('waitlist-launch-note');
+      const privacyNote = document.getElementById('waitlist-privacy');
+      if (!form || !successCard || !status || !submitButton || !launchNote || !privacyNote) return;
+
+      const runtimeConfig = window.__THRIVING_DANCER_WORKBOOK_WAITLIST__ || {};
+      const configSource = (form.dataset.configSource || '').trim();
+
+      const applyRuntimeConfig = () => {
+        const merged = {
+          submitMode: runtimeConfig.submitMode || form.dataset.submitMode || 'placeholder',
+          endpoint: runtimeConfig.endpoint || form.dataset.endpoint || '',
+          successMode: runtimeConfig.successMode || form.dataset.successMode || 'inline-success',
+          redirectUrl: runtimeConfig.redirectUrl || form.dataset.redirectUrl || '',
+          toolLabel: runtimeConfig.toolLabel || form.dataset.toolLabel || 'configured endpoint',
+          privacyPolicyUrl: runtimeConfig.privacyPolicyUrl || form.dataset.privacyPolicyUrl || '',
+          successMessage: runtimeConfig.successMessage || form.dataset.successMessage || ''
+        };
+        form.dataset.submitMode = merged.submitMode;
+        form.dataset.endpoint = merged.endpoint;
+        form.dataset.successMode = merged.successMode;
+        form.dataset.redirectUrl = merged.redirectUrl;
+        form.dataset.toolLabel = merged.toolLabel;
+        form.dataset.privacyPolicyUrl = merged.privacyPolicyUrl;
+        form.dataset.successMessage = merged.successMessage;
+        if (merged.privacyPolicyUrl) {
+          privacyNote.innerHTML = `We’ll only use your information for Thriving Dancer workbook/project updates. No spam. <a href="${merged.privacyPolicyUrl}" target="_blank" rel="noopener">Privacy policy</a>`;
+        } else {
+          privacyNote.textContent = 'We’ll only use your information for Thriving Dancer workbook/project updates. No spam.';
+        }
+        const liveMode = merged.submitMode !== 'placeholder' && Boolean((merged.endpoint || '').trim());
+        launchNote.className = `launch-note ${liveMode ? 'ready' : 'preview'}`;
+        launchNote.innerHTML = liveMode
+          ? `<strong>Current stage:</strong> release-update capture is connected through ${merged.toolLabel}.`
+          : '<strong>Current stage:</strong> this page is in pre-release preview mode while the first real email-capture hookup is being finalized.';
+        return merged;
+      };
+
+      applyRuntimeConfig();
+
+      const setStatus = (message, state = '') => {
+        status.className = state ? `form-status ${state}` : 'form-status';
+        status.textContent = message;
+      };
+
+      const showSuccess = (message) => {
+        const note = document.getElementById('waitlist-success-note');
+        if (note && message) note.textContent = message;
+        successCard.hidden = false;
+        successCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      };
+
+      const setSubmitting = (isSubmitting) => {
+        submitButton.disabled = isSubmitting;
+        submitButton.textContent = isSubmitting ? 'Submitting…' : 'Join the interest list';
+      };
+
+      form.addEventListener('submit', async (event) => {
+        const mergedConfig = applyRuntimeConfig();
+        const endpoint = (mergedConfig.endpoint || '').trim();
+        const mode = (mergedConfig.submitMode || 'placeholder').trim();
+        const successMode = (mergedConfig.successMode || 'inline-success').trim();
+        const redirectUrl = (mergedConfig.redirectUrl || '').trim();
+        const toolLabel = (mergedConfig.toolLabel || 'configured endpoint').trim();
+        const successMessage = (mergedConfig.successMessage || '').trim();
+        const firstName = form.querySelector('#first-name');
+        const email = form.querySelector('#email');
+        const honeypot = form.querySelector('#company-name');
+        const missing = [];
+        if (!firstName?.value.trim()) missing.push('first name');
+        if (!email?.value.trim()) missing.push('email');
+
+        if (honeypot?.value.trim()) {
+          event.preventDefault();
+          return;
+        }
+
+        if (missing.length) {
+          event.preventDefault();
+          successCard.hidden = true;
+          setStatus(`Please enter ${missing.join(' and ')}.`, 'error');
+          return;
+        }
+
+        if (mode === 'placeholder' || !endpoint) {
+          event.preventDefault();
+          successCard.hidden = true;
+          setStatus('Pre-release preview mode only: the real email-capture connection is not enabled on this copy yet.', 'error');
+          return;
+        }
+
+        if (mode === 'native-post') {
+          setStatus(`Submitting through ${toolLabel}…`);
+          if (successMode === 'redirect' && redirectUrl) {
+            form.action = endpoint;
+          } else {
+            form.action = endpoint;
+          }
+          return;
+        }
+
+        if (mode === 'json-post') {
+          event.preventDefault();
+          successCard.hidden = true;
+          setSubmitting(true);
+          setStatus(`Submitting through ${toolLabel}…`);
+
+          try {
+            const formData = new FormData(form);
+            const encoded = new URLSearchParams();
+            for (const [key, value] of formData.entries()) {
+              encoded.append(key, value);
+            }
+
+            const response = await fetch(endpoint, {
+              method: 'POST',
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+              },
+              body: encoded.toString()
+            });
+
+            if (!response.ok) {
+              let detail = '';
+              try {
+                const payload = await response.json();
+                detail = payload?.error || payload?.message || '';
+              } catch (_) {
+                detail = '';
+              }
+              throw new Error(detail ? `Request failed with status ${response.status}: ${detail}` : `Request failed with status ${response.status}`);
+            }
+
+            if (successMode === 'redirect' && redirectUrl) {
+              window.location.href = redirectUrl;
+              return;
+            }
+
+            form.reset();
+            showSuccess(successMessage || 'Thanks — you’re on the list. We’ll let you know when the workbook is ready and when preview or release details are available.');
+            setStatus('Interest captured successfully.', 'success');
+          } catch (error) {
+            setStatus('Something went wrong while submitting the form. Please try again shortly.', 'error');
+          } finally {
+            setSubmitting(false);
+          }
+          return;
+        }
+
+        event.preventDefault();
+        setStatus(`Unknown submit mode: ${mode}.`, 'error');
+      });
+
+      if (configSource && runtimeConfig.toolLabel && runtimeConfig.toolLabel !== 'not-configured' && (runtimeConfig.endpoint || '').trim()) {
+        setStatus(`Ready for real integration via ${runtimeConfig.toolLabel}.`, 'success');
+      }
+    })();
+  </script>
 </body>
 </html>
