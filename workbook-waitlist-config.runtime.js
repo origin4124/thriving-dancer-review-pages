@@ -4,17 +4,13 @@
 // Leave submitMode='placeholder' until a real Formspree form endpoint is created.
 window.__THRIVING_DANCER_WORKBOOK_WAITLIST__ = window.__THRIVING_DANCER_WORKBOOK_WAITLIST__ || {
   provider: 'formspree',
-  submitMode: 'placeholder',
-  endpoint: '',
-  endpointTemplate: 'https://formspree.io/f/REPLACE_WITH_FORM_ID',
+  submitMode: 'native-post',
+  endpoint: 'https://formspree.io/f/xvzvyddo',
+  endpointTemplate: 'https://formspree.io/f/xvzvyddo',
   successMode: 'inline-success',
   redirectUrl: 'https://origin4124.github.io/thriving-dancer-review-pages/workbook-waitlist-thank-you.html',
   toolLabel: 'Formspree',
   privacyPolicyUrl: '',
   successMessage: 'Thanks — you’re on the list. We’ll let you know when the workbook is ready and when preview or release details are available.',
-  notes: [
-    'Create a Formspree form and copy its endpoint from the dashboard.',
-    'Replace endpoint with the real https://formspree.io/f/{FORM_ID} value.',
-    'Switch submitMode from placeholder to native-post once the endpoint is real.'
-  ]
+  notes: ['Activated with a real Formspree endpoint and ready for a real submission test.']
 };
