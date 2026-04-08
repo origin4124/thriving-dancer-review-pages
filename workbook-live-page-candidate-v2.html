@@ -169,6 +169,25 @@
       font-size: .9rem;
       color: var(--muted);
     }
+    .trust-points {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fff;
+    }
+    .trust-points h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+    .trust-points ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .trust-points li {
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
     .bridge-copy {
       margin-top: 10px;
       padding: 14px 16px;
@@ -362,12 +381,13 @@
     <section class="section" id="waitlist">
       <div class="kicker">Interest list</div>
       <h2>Want to hear when the workbook is ready?</h2>
-      <p>Join the list to hear when the workbook is ready and when preview or release details are available.</p>
+      <p>Join the list to hear when the workbook is ready, when preview details are worth sharing, and when first release information becomes available.</p>
       <div class="bridge-copy">
-        <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want release and preview updates without having to keep checking back.</p>
+        <p><strong>What this step means:</strong> you have seen the workbook direction, and this is the simple follow-up if you want meaningful updates without having to keep checking back.</p>
+        <p class="small">The goal here is simple: early access to the right updates, not a flood of extra email.</p>
       </div>
       <div class="launch-note preview" id="waitlist-launch-note" aria-live="polite">
-        <strong>Current stage:</strong> this page is in pre-release preview mode, and the interest list is here for early updates as the workbook takes shape.
+        <strong>Current stage:</strong> the interest list is open for early workbook updates while the first release keeps taking shape.
       </div>
       <form id="waitlist-form" action="#waitlist-success" method="post" novalidate data-submit-mode="placeholder" data-endpoint="" data-success-mode="inline-success" data-redirect-url="" data-tool-label="not-configured" data-privacy-policy-url="" data-success-message="" data-config-source="window.__THRIVING_DANCER_WORKBOOK_WAITLIST__">
         <input type="hidden" name="source" value="workbook-live-page-candidate-v2" />
@@ -392,6 +412,14 @@
           <a class="btn secondary" href="#preview">Back to preview</a>
         </div>
         <p class="privacy-note" id="waitlist-privacy">We’ll only use your information for Thriving Dancer workbook/project updates. No spam. <a href="/thriving-dancer-review-pages/workbook-waitlist-privacy.html">Read the privacy note</a>.</p>
+        <div class="trust-points" aria-label="Interest list expectations">
+          <h3>What to expect</h3>
+          <ul>
+            <li>A small number of relevant updates when there is something genuinely worth sharing.</li>
+            <li>First-release, preview, and workbook-specific news only — not a generic marketing list.</li>
+            <li>An easy unsubscribe path whenever email updates are no longer useful.</li>
+          </ul>
+        </div>
         <p class="form-status" id="waitlist-status" aria-live="polite"></p>
       </form>
       <div class="success-card" id="waitlist-success" aria-live="polite" hidden>
@@ -441,8 +469,8 @@
         const liveMode = merged.submitMode !== 'placeholder' && Boolean((merged.endpoint || '').trim());
         launchNote.className = `launch-note ${liveMode ? 'ready' : 'preview'}`;
         launchNote.innerHTML = liveMode
-          ? `<strong>Current stage:</strong> release-update capture is connected through ${merged.toolLabel}.`
-          : '<strong>Current stage:</strong> this page is in pre-release preview mode, and the interest list will shift into real sign-up mode once the hosted form path is connected.';
+          ? '<strong>Current stage:</strong> the interest list is live now for early workbook updates.'
+          : '<strong>Current stage:</strong> the interest list is open for early workbook updates while the first release keeps taking shape.';
         return merged;
       };
 
@@ -462,7 +490,7 @@
 
       const setSubmitting = (isSubmitting) => {
         submitButton.disabled = isSubmitting;
-        submitButton.textContent = isSubmitting ? 'Submitting…' : 'Join the interest list';
+        submitButton.textContent = isSubmitting ? 'Joining the list...' : 'Join the interest list';
       };
 
       form.addEventListener('submit', async (event) => {
@@ -500,7 +528,7 @@
         }
 
         if (mode === 'native-post') {
-          setStatus(`Submitting through ${toolLabel}…`);
+          setStatus('Submitting your interest…');
           if (successMode === 'redirect' && redirectUrl) {
             form.action = endpoint;
           } else {
@@ -513,7 +541,7 @@
           event.preventDefault();
           successCard.hidden = true;
           setSubmitting(true);
-          setStatus(`Submitting through ${toolLabel}…`);
+          setStatus('Submitting your interest…');
 
           try {
             const formData = new FormData(form);
@@ -549,7 +577,7 @@
 
             form.reset();
             showSuccess(successMessage || 'Thanks — you’re on the list. We’ll let you know when the workbook is ready and when preview or release details are available.');
-            setStatus('Interest captured successfully.', 'success');
+            setStatus('You’re on the list.', 'success');
           } catch (error) {
             setStatus('Something went wrong while submitting the form. Please try again shortly.', 'error');
           } finally {
@@ -563,7 +591,7 @@
       });
 
       if (configSource && runtimeConfig.toolLabel && runtimeConfig.toolLabel !== 'not-configured' && (runtimeConfig.endpoint || '').trim()) {
-        setStatus(`Ready for real integration via ${runtimeConfig.toolLabel}.`, 'success');
+        setStatus('');
       }
     })();
   </script>
