@@ -8,7 +8,7 @@ window.__THRIVING_DANCER_WORKBOOK_WAITLIST__ = window.__THRIVING_DANCER_WORKBOOK
   endpoint: '',
   endpointTemplate: 'https://formspree.io/f/REPLACE_WITH_FORM_ID',
   successMode: 'inline-success',
-  redirectUrl: '',
+  redirectUrl: 'https://origin4124.github.io/thriving-dancer-review-pages/workbook-waitlist-thank-you.html',
   toolLabel: 'Formspree',
   privacyPolicyUrl: '',
   successMessage: 'Thanks — you’re on the list. We’ll let you know when the workbook is ready and when preview or release details are available.',
