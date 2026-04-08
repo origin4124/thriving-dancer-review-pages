@@ -442,7 +442,7 @@
         launchNote.className = `launch-note ${liveMode ? 'ready' : 'preview'}`;
         launchNote.innerHTML = liveMode
           ? `<strong>Current stage:</strong> release-update capture is connected through ${merged.toolLabel}.`
-          : '<strong>Current stage:</strong> this page is in pre-release preview mode while the first real email-capture hookup is being finalized.';
+          : '<strong>Current stage:</strong> this page is in pre-release preview mode, and the interest list will shift into real sign-up mode once the hosted form path is connected.';
         return merged;
       };
 
@@ -495,7 +495,7 @@
         if (mode === 'placeholder' || !endpoint) {
           event.preventDefault();
           successCard.hidden = true;
-          setStatus('Pre-release preview mode only: the real email-capture connection is not enabled on this copy yet.', 'error');
+          setStatus('This preview is still in pre-release mode. The live sign-up connection is not turned on yet for this copy.', 'error');
           return;
         }
 
