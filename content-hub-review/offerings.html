@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriving Dancer Offerings</title>
+  <script>document.documentElement.classList.add('js-page-transition');</script>
+  <link rel="stylesheet" href="site.css" />
+
+<style>
+#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+#review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+#review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+#review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+#review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+#review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <main class="page">
+    
+<header class="site-header">
+  <div class="topline">
+    <div>
+      <div class="brand-title">Thriving Dancer</div>
+      <div class="brand-subtitle">Reflection, support, and steadier next steps for dancers after hard class days.</div>
+    </div>
+    <nav class="nav">
+      <a href="public-hub.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="offerings.html">Offerings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+    
+<section class="hero">
+  <div class="hero-media">
+    <div class="kicker-chip">Workbook preview · reflective support</div>
+  </div>
+  <div class="hero-body">
+    <div class="eyebrow">Offerings</div>
+    <h1 class="hero-title">The Reflection Workbook gives dancers something steadier than replay after a hard class.</h1>
+    <p>A guided workbook for dancers who want more than inspiration — a steadier way to process corrections, recover from hard classes, and leave the studio with a clearer next step.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#workbook-signup">Join the workbook list</a>
+      <a class="btn secondary" href="articles.html">Read the articles first</a>
+    </div>
+    <div class="quote-card"><p>Built for the moment after class, when a dancer needs something clear enough to use and calm enough to trust.</p></div>
+  </div>
+</section>
+<section class="grid-2">
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">What it helps with</div>
+      <h2>Where the workbook becomes useful</h2>
+    </div>
+    <div class="info-points">
+      <div>• separating the useful correction from the shame spiral</div>
+      <div>• noticing what really needs work after class</div>
+      <div>• rebuilding confidence after feedback-heavy rehearsals</div>
+      <div>• creating a healthier reflection rhythm week to week</div>
+    </div>
+    <div class="link-row" style="margin-top:16px;"><a href="articles.html">Read related articles</a><a href="about.html">About Thriving Dancer</a></div>
+  </section>
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">Who it is for</div>
+      <h2>A dancer-first support tool</h2>
+    </div>
+    <div class="info-points">
+      <div>• dancers who carry class home and want a calmer reset path</div>
+      <div>• parents and supporters who want language that actually helps</div>
+      <div>• teachers or studio support people looking for steadier follow-through</div>
+    </div>
+  </section>
+</section>
+<section class="grid-2">
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">What is coming</div>
+      <h2>The next version of this offering</h2>
+      <p>The public workbook page is still simple on purpose. The next stronger version will include richer sample spreads, clearer use cases, and a cleaner preview path.</p>
+    </div>
+    <div class="related-box">
+      <span class="mini-kicker">Current promise</span>
+      <h3>Reflection, prompts, and steadier follow-through</h3>
+      <p>The workbook is meant to turn a hard class day into something a dancer can process and use, not just survive.</p>
+    </div>
+  </section>
+  <section class="panel" id="workbook-signup">
+    <span class="mini-kicker">Join the workbook list</span>
+    <h2>Get updates when the workbook opens for preview or release.</h2>
+    <p>This sign-up is for dancers, parents, and supporters who want first access to workbook updates, preview details, and release news.</p>
+    <form class="form-shell" action="https://formspree.io/f/xvzvyddo" method="POST">
+      <input type="hidden" name="_subject" value="Thriving Dancer Workbook Signup" />
+      <input type="hidden" name="_next" value="http://127.0.0.1:8793/workbook-thank-you.html" />
+      <div class="form-grid">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div>
+          <label for="role">I’m signing up as</label>
+          <select id="role" name="role">
+            <option>Dancer</option>
+            <option>Parent / family member</option>
+            <option>Teacher / studio support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="interest">What do you want most?</label>
+          <input id="interest" name="interest" type="text" placeholder="Confidence, reflection prompts, parent support..." />
+        </div>
+        <div class="full">
+          <label for="notes">Anything you’d love the workbook to help with?</label>
+          <textarea id="notes" name="notes" placeholder="Optional"></textarea>
+        </div>
+      </div>
+      <div class="cta-row">
+        <button class="btn primary" type="submit">Join the workbook list</button>
+        <a class="btn secondary" href="about.html">Learn more about the project</a>
+      </div>
+      <p class="small-note">By signing up, you’ll receive workbook updates and related Thriving Dancer news. The current live form endpoint is powered by Formspree.</p>
+    </form>
+  </section>
+</section>
+  </main>
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        requestAnimationFrame(() => document.body.classList.add('is-ready'));
+      } else {
+        document.body.classList.add('is-ready');
+      }
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (link.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+        if (reduceMotion) return;
+        event.preventDefault();
+        document.body.classList.add('is-leaving');
+        window.setTimeout(() => { window.location.href = url.href; }, 240);
+      });
+    })();
+  </script>
+
+  <div id="review-gate-overlay">
+    <div id="review-gate-card">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
+      <h1>Enter passcode</h1>
+      <p>This public-content-hub review set is lightly gated so only the intended reviewer opens it. Enter the passcode from the message to continue.</p>
+      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
+      <button id="review-passcode-submit" type="button">Open review pages</button>
+      <div id="review-gate-error"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const PASSCODE = 'morning';
+      const STORAGE_KEY = 'td-content-hub-review-gate-2026-04-17';
+      const overlay = document.getElementById('review-gate-overlay');
+      const input = document.getElementById('review-passcode');
+      const button = document.getElementById('review-passcode-submit');
+      const error = document.getElementById('review-gate-error');
+      function unlock() { overlay.style.display = 'none'; }
+      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') { unlock(); return; }
+      button.addEventListener('click', function () {
+        if ((input.value || '').trim() === PASSCODE) {
+          sessionStorage.setItem(STORAGE_KEY, 'ok');
+          unlock();
+        } else {
+          error.textContent = 'That passcode is not correct.';
+          input.focus();
+        }
+      });
+      input.addEventListener('keydown', function (event) { if (event.key === 'Enter') button.click(); });
+    })();
+  </script>
+</body>
+</html>

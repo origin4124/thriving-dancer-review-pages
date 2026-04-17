@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriving Dancer Articles</title>
+  <script>document.documentElement.classList.add('js-page-transition');</script>
+  <link rel="stylesheet" href="site.css" />
+
+<style>
+#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+#review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+#review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+#review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+#review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+#review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <main class="page">
+    
+<header class="site-header">
+  <div class="topline">
+    <div>
+      <div class="brand-title">Thriving Dancer</div>
+      <div class="brand-subtitle">Reflection, support, and steadier next steps for dancers after hard class days.</div>
+    </div>
+    <nav class="nav">
+      <a href="public-hub.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="offerings.html">Offerings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+    
+<section class="grid-2">
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">Articles</div>
+      <h1>Writing that stays useful after the hard class is over.</h1>
+      <p>Some pieces are quick reads. Some carry audio or video too. The point is the same: help a dancer leave the spiral with something steadier than replay.</p>
+    </div>
+    <div class="quote-card"><p>Read here when you want a calmer pace, clearer language, and a next step you can actually carry into the next class.</p></div>
+  </section>
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">Use the library like this</div>
+      <h2>Pick the angle that fits the day.</h2>
+    </div>
+    <div class="info-points">
+      <div>• confidence and reset after a heavy class</div>
+      <div>• language for dancers and families after frustrating rehearsals</div>
+      <div>• workbook-style prompts when reading alone is not enough</div>
+    </div>
+  </section>
+</section>
+
+<section class="panel">
+  <div class="section-head">
+    <div class="eyebrow">Library</div>
+    <h2>Current reading shelf</h2>
+    <p>The article library is the main public container. When audio or video belongs with a piece, it lives inside the same article path.</p>
+  </div>
+  <div class="grid-3"><article class="list-card">
+    <div class="thumb">📝</div>
+    <div class="meta-row"><span>Article</span><span>6 min read</span><span>Companion available</span></div>
+    <h3><a href="article-reflection-after-hard-class.html">Three ways dancers can use reflection after a hard class</a></h3>
+    <p>A companion article that turns the flagship episode into a concrete reset framework dancers can revisit between classes.</p>
+    <div class="link-row"><a href="article-reflection-after-hard-class.html">Read article</a><a href="episode-confidence-after-hard-class.html">Open article with media</a></div>
+  </article><article class="list-card">
+    <div class="thumb">📝</div>
+    <div class="meta-row"><span>Guide</span><span>5 min read</span><span>Companion available</span></div>
+    <h3><a href="article-what-to-say-after-frustrating-rehearsal.html">What to say after a frustrating rehearsal</a></h3>
+    <p>A parent-and-dancer support piece with language that lowers the temperature after hard corrections or emotional studio days.</p>
+    <div class="link-row"><a href="article-what-to-say-after-frustrating-rehearsal.html">Read article</a><a href="episode-recover-momentum-after-hard-week.html">Open article with media</a></div>
+  </article><article class="list-card">
+    <div class="thumb">📝</div>
+    <div class="meta-row"><span>Workbook companion</span><span>4 min read</span><span>Standalone article</span></div>
+    <h3><a href="article-reflection-prompt-pack.html">A reflection prompt pack that pairs with the latest episode</a></h3>
+    <p>A workbook-style bridge between listening and action — prompts dancers can actually use to process class and reset their focus.</p>
+    <div class="link-row"><a href="article-reflection-prompt-pack.html">Read article</a></div>
+  </article></div>
+</section>
+  </main>
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        requestAnimationFrame(() => document.body.classList.add('is-ready'));
+      } else {
+        document.body.classList.add('is-ready');
+      }
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (link.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+        if (reduceMotion) return;
+        event.preventDefault();
+        document.body.classList.add('is-leaving');
+        window.setTimeout(() => { window.location.href = url.href; }, 240);
+      });
+    })();
+  </script>
+
+  <div id="review-gate-overlay">
+    <div id="review-gate-card">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
+      <h1>Enter passcode</h1>
+      <p>This public-content-hub review set is lightly gated so only the intended reviewer opens it. Enter the passcode from the message to continue.</p>
+      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
+      <button id="review-passcode-submit" type="button">Open review pages</button>
+      <div id="review-gate-error"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const PASSCODE = 'morning';
+      const STORAGE_KEY = 'td-content-hub-review-gate-2026-04-17';
+      const overlay = document.getElementById('review-gate-overlay');
+      const input = document.getElementById('review-passcode');
+      const button = document.getElementById('review-passcode-submit');
+      const error = document.getElementById('review-gate-error');
+      function unlock() { overlay.style.display = 'none'; }
+      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') { unlock(); return; }
+      button.addEventListener('click', function () {
+        if ((input.value || '').trim() === PASSCODE) {
+          sessionStorage.setItem(STORAGE_KEY, 'ok');
+          unlock();
+        } else {
+          error.textContent = 'That passcode is not correct.';
+          input.focus();
+        }
+      });
+      input.addEventListener('keydown', function (event) { if (event.key === 'Enter') button.click(); });
+    })();
+  </script>
+</body>
+</html>

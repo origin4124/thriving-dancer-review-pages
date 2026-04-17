@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Thriving Dancer</title>
+  <script>document.documentElement.classList.add('js-page-transition');</script>
+  <link rel="stylesheet" href="site.css" />
+
+<style>
+#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+#review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+#review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+#review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+#review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+#review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
+</style>
+</head>
+<body>
+  <main class="page">
+    
+<header class="site-header">
+  <div class="topline">
+    <div>
+      <div class="brand-title">Thriving Dancer</div>
+      <div class="brand-subtitle">Reflection, support, and steadier next steps for dancers after hard class days.</div>
+    </div>
+    <nav class="nav">
+      <a href="public-hub.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="offerings.html">Offerings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+    
+<section class="hero">
+  <div class="hero-media">
+    <div class="kicker-chip">About Trista · dance-rooted support</div>
+  </div>
+  <div class="hero-body">
+    <div class="eyebrow">About</div>
+    <h1 class="hero-title">Thriving Dancer is shaped by Trista’s lived experience inside serious dance training.</h1>
+    <p>This project begins from a simple truth: a hard class can keep echoing long after class is over, and dancers need support that understands the emotional and technical rhythm of that reality.</p>
+    <div class="quote-card"><p>Not generic self-help. Not more pressure. Something steadier, more dance-rooted, and actually usable after difficult class days.</p></div>
+  </div>
+</section>
+
+<section class="grid-2">
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">What shapes the work</div>
+      <h2>Why it takes this form</h2>
+    </div>
+    <div class="info-points">
+      <div>• help dancers reflect, recover, and move forward more constructively after difficult class days</div>
+      <div>• keep the support rooted in the real emotional and technical rhythm of dance life</div>
+      <div>• offer something steadier than generic self-help or more performance pressure</div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="section-head">
+      <div class="eyebrow">What you’ll find here</div>
+      <h2>The current public shape</h2>
+    </div>
+    <div class="info-points">
+      <div>• articles that can also carry embedded audio or video conversations</div>
+      <div>• practical support for dancers and the people encouraging them</div>
+      <div>• the workbook when more structure and follow-through would help</div>
+    </div>
+    <div class="link-row" style="margin-top:14px;"><a href="articles.html">Articles</a><a href="offerings.html">Offerings</a></div>
+  </section>
+</section>
+  </main>
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        requestAnimationFrame(() => document.body.classList.add('is-ready'));
+      } else {
+        document.body.classList.add('is-ready');
+      }
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (link.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+        if (reduceMotion) return;
+        event.preventDefault();
+        document.body.classList.add('is-leaving');
+        window.setTimeout(() => { window.location.href = url.href; }, 240);
+      });
+    })();
+  </script>
+
+  <div id="review-gate-overlay">
+    <div id="review-gate-card">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
+      <h1>Enter passcode</h1>
+      <p>This public-content-hub review set is lightly gated so only the intended reviewer opens it. Enter the passcode from the message to continue.</p>
+      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
+      <button id="review-passcode-submit" type="button">Open review pages</button>
+      <div id="review-gate-error"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const PASSCODE = 'morning';
+      const STORAGE_KEY = 'td-content-hub-review-gate-2026-04-17';
+      const overlay = document.getElementById('review-gate-overlay');
+      const input = document.getElementById('review-passcode');
+      const button = document.getElementById('review-passcode-submit');
+      const error = document.getElementById('review-gate-error');
+      function unlock() { overlay.style.display = 'none'; }
+      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') { unlock(); return; }
+      button.addEventListener('click', function () {
+        if ((input.value || '').trim() === PASSCODE) {
+          sessionStorage.setItem(STORAGE_KEY, 'ok');
+          unlock();
+        } else {
+          error.textContent = 'That passcode is not correct.';
+          input.focus();
+        }
+      });
+      input.addEventListener('keydown', function (event) { if (event.key === 'Enter') button.click(); });
+    })();
+  </script>
+</body>
+</html>
