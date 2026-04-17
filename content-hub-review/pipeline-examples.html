@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thriving Dancer Pipeline Examples</title>
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    #review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+    #review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+    #review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+    #review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+    #review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+    #review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+    #review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
+    pre.example { white-space: pre-wrap; background:#fff8fc; border:1px solid #ead9e8; border-radius:14px; padding:16px; overflow:auto; }
+  </style>
+</head>
+<body>
+<div id="review-gate-overlay"><div id="review-gate-card"><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div><h1>Enter passcode</h1><p>This pipeline review page is lightly gated. Enter the passcode from the message to continue.</p><input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" /><button id="review-passcode-submit" type="button">Open review page</button><div id="review-gate-error"></div></div></div>
+<main class="page">
+<header class="site-header"><div class="topline"><div><div class="brand-title">Thriving Dancer</div><div class="brand-subtitle">Pipeline examples from one source across the current machine surfaces.</div></div><nav class="nav"><a href="public-hub.html">Home</a><a href="articles.html">Articles</a><a href="offerings.html">Offerings</a><a href="about.html">About</a></nav></div></header>
+<section class="hero"><div class="hero-body"><div class="eyebrow">Cross-platform review bundle</div><h1 class="hero-title">Same-source outputs across the current content machine</h1><p>This review page shows the current article draft, subscriber email output, public content hub destination, and the existing private YouTube proof side by side.</p><div class="meta-row"><span>Source: Heather Robles interview — full pipeline precheck</span><span>Bundle: tdb-mnzz2u2s-yfeefe</span><span>Intake: ti-mnzz2u29-320tpm</span></div></div></section>
+<section class="grid-2">
+  <section class="panel"><div class="section-head"><div class="eyebrow">Public content hub article</div><h2>Heather Robles Interview — Full Pipeline Precheck</h2><p>hybrid-local-model • qwen2.5-coder:7b • long-form-interview-base</p></div><pre class="example">Heather Robles discusses building an independent dance life that encompasses choreography, performance, travel, and embodied care work rather than being confined to a single narrow lane.
+
+When her parents saw her dancing in the living room at two years old, they encouraged her to take a dance class, enrolling her in ballet. She co-founded Illuminations Dance Company with a partner right out of college. This early start is significant because it highlights that dance for Heather was built over time rather than discovered all at once.
+
+Later, she moved to New York to study at the Ailey School. The source emphasizes that artists in the United States often operate within silos, especially in New York City. By naming this condition and explaining why working outside a silo matters, Heather provides insight into the challenges faced by dancers and the importance of independent work.
+
+The most useful way to engage with this interview is to focus on the practical through-line emerging from the quoted material and the clearly repeated facts. For readers interested in learning more, they are encouraged to open the new article and listen on the article page if the conversation feels relevant.</pre><p><strong>Public review path:</strong> <a href="public-hub.html">content hub home</a> / <code>heather-robles-interview-full-pipeline-precheck.html</code></p></section>
+  <section class="panel"><div class="section-head"><div class="eyebrow">Email notification / newsletter-style example</div><h2>New article: Heather Robles interview — full pipeline precheck</h2><p>deterministic • long-form-interview-base</p></div><pre class="example">Preheader: When my parents saw me dancing in the living room when I was two, they decided that I should maybe take a dance class, and they put me into ballet
+
+Hi,
+A new Thriving Dancer article is ready: Heather Robles interview — full pipeline precheck.
+Heather Robles talks about building an independent dance life that spans choreography, performance, travel, and embodied care work rather than staying confined to one narrow lane.
+One line that helps anchor it is: “I actually co-founded a company right out of college called Illuminations Dance Company with a partner.”
+The interview also makes clear that she later moved to New York to study at the Ailey School.
+If this sounds useful, the next step is to open the new article and listen on the article page if the conversation feels relevant.
+More soon,
+Thriving Dancer</pre></section>
+</section>
+<section class="grid-2">
+  <section class="panel"><div class="section-head"><div class="eyebrow">YouTube private example</div><h2>Existing private upload proof</h2><p>This is the current private-upload proof in the machine lane.</p></div><pre class="example">Handoff: ghr-mo20a3u0-a1329p
+Video ID: bV40XquRkX4
+Watch URL: https://www.youtube.com/watch?v=bV40XquRkX4
+Result: YouTube private upload succeeded from C:\Users\origi\Downloads\bliptv-20131014-110547-Cgbenzine-DanceDanceDanceDance715.mp4
+Evidence: Uploaded private video bV40XquRkX4 (https://www.youtube.com/watch?v=bV40XquRkX4).</pre><p><a class="btn primary" href="https://www.youtube.com/watch?v=bV40XquRkX4">Open private YouTube video</a></p></section>
+  <section class="panel"><div class="section-head"><div class="eyebrow">Review notes</div><h2>Current honest status</h2></div><ul><li>Public content hub review set is now published on GitHub Pages with the same simple gate.</li><li>The article lane is now using <strong>long-form-interview-base</strong> for Heather-class long interviews.</li><li>Email output remains simpler and more stable than the long-form article path.</li><li>YouTube private upload is proven live, but the strongest same-source article/email pair right now is still the Heather benchmark bundle.</li></ul></section>
+</section>
+</main>
+<script>(function(){const PASSCODE='morning';const STORAGE_KEY='td-pipeline-examples-gate-2026-04-17';const overlay=document.getElementById('review-gate-overlay');const input=document.getElementById('review-passcode');const button=document.getElementById('review-passcode-submit');const error=document.getElementById('review-gate-error');function unlock(){overlay.style.display='none';}if(sessionStorage.getItem(STORAGE_KEY)==='ok'){unlock();return;}button.addEventListener('click',function(){if((input.value||'').trim()===PASSCODE){sessionStorage.setItem(STORAGE_KEY,'ok');unlock();}else{error.textContent='That passcode is not correct.';input.focus();}});input.addEventListener('keydown',function(event){if(event.key==='Enter') button.click();});})();</script>
+</body></html>
