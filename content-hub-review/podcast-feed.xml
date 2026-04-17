@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Thriving Dancer Podcast</title>
+    <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/public-hub.html</link>
+    <description>Audio-first practice, interview, and reflection episodes for the Thriving Dancer system.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 Apr 2026 17:41:07 GMT</lastBuildDate>
+    <atom:link href="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-feed.xml" rel="self" type="application/rss+xml" />
+    <itunes:author>Thriving Dancer</itunes:author>
+    <itunes:summary>Audio-first practice, interview, and reflection episodes for the Thriving Dancer system.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>Intro for Restorative Yoga — Interview Notes and Takeaways</title>
+      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-intro-for-restorative-yoga-podcast-episode.html</link>
+      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-intro-for-restorative-yoga-podcast-episode.html</guid>
+      <pubDate>Fri, 17 Apr 2026 17:41:07 GMT</pubDate>
+      <description>This practice is designed to help your body and mind release the weight of the day, to soften the tension you&apos;ve been holding and reconnect to a steady peaceful rhythm within. We&apos;ll move gently using supportive props and longer holds to invite the nervous system into balance. Hi friends, and welcome to Devanna Yoga and Wellness.
+
+Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/intro-for-restorative-yoga-interview-notes-and-takeaways.html
+
+YouTube listen destination: https://www.youtube.com/watch?v=b7qMXEtV-D0</description>
+      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/intro-for-restorative-yoga-interview-notes-and-takeaways/intro-for-restorative-yoga-support-audio.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Heartbeat Podcast Lane Smoke — Interview Notes and Takeaways</title>
+      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-heartbeat-podcast-lane-smoke-podcast-episode.html</link>
+      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-heartbeat-podcast-lane-smoke-podcast-episode.html</guid>
+      <pubDate>Fri, 17 Apr 2026 17:26:03 GMT</pubDate>
+      <description>This is a short calm audio-only smoke test for the podcast-first lane. It should create an article, a podcast episode destination, an email handoff, and a YouTube support path without needing a manual destination override.
+
+Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/heartbeat-podcast-lane-smoke-interview-notes-and-takeaways.html
+
+YouTube listen destination: https://www.youtube.com/watch?v=yppKSLJ4sJg</description>
+      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/heartbeat-podcast-lane-smoke-interview-notes-and-takeaways/heartbeat-podcast-lane-smoke-support-audio.mp3" type="audio/mpeg" />
+    </item>
+  </channel>
+</rss>
