@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Updates | Thriving Dancer</title>
+  <script>document.documentElement.classList.add('js-page-transition');</script>
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    #review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+    #review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+    #review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+    #review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+    #review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+    #review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+    #review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
+    .check-stack { display: grid; gap: 10px; }
+    .check-row { display: flex; gap: 10px; align-items: flex-start; color: #5f5365; }
+    .check-row input { width: auto; margin-top: 3px; }
+    .small-note { color: #5f5365; font-size: 0.95rem; }
+    .portal-note { margin-top: 18px; padding: 16px 18px; border: 1px solid #ead9e8; border-radius: 18px; background: #fcf7fb; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="site-header">
+      <div class="topline">
+        <div>
+          <div class="brand-title">Thriving Dancer</div>
+          <div class="brand-subtitle">Reflection, support, and steadier next steps for dancers after hard class days.</div>
+        </div>
+        <nav class="nav">
+          <a href="public-hub.html">Home</a>
+          <a href="articles.html">Articles</a>
+          <a href="offerings.html">Offerings</a>
+          <a href="subscribe.html" aria-current="page">Email updates</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-media">
+        <div class="kicker-chip">Temporary outward subscriber surface</div>
+      </div>
+      <div class="hero-body">
+        <div class="eyebrow">Email updates</div>
+        <h1 class="hero-title">Choose the kind of Thriving Dancer updates you actually want.</h1>
+        <p>This review-pages version is now the temporary public front door for subscriber capture: article alerts, newsletter notes, workbook or offer updates, and a lighter or fuller information level.</p>
+        <div class="meta-row"><span>Email required</span><span>Name optional</span><span>Preference-based request</span><span>Temporary public path</span></div>
+        <div class="cta-row">
+          <a class="btn primary" href="#subscribe-panel">Set my email preferences</a>
+          <a class="btn secondary" href="articles.html">Read first</a>
+        </div>
+        <div class="quote-card"><p>This page is the outward capture layer now; the deeper canonical subscriber-management flow still lives behind it.</p></div>
+      </div>
+    </section>
+
+    <section class="grid-2">
+      <section class="panel" id="subscribe-panel">
+        <span class="mini-kicker">Live outward capture</span>
+        <h2>Request the update mix you want</h2>
+        <p class="small-note">This temporary public page collects your requested update mix and routes it into the current Thriving Dancer operator workflow so the canonical subscriber system can take over follow-through from there.</p>
+        <form class="form-shell" action="https://formspree.io/f/xvzvyddo" method="POST">
+          <input type="hidden" name="_subject" value="Thriving Dancer Email Updates Signup" />
+          <input type="hidden" name="_next" value="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/email-updates-thank-you.html" />
+          <input type="hidden" name="source" value="content-hub-review-subscribe" />
+          <input type="hidden" name="destinationLayer" value="review-pages-content-hub" />
+          <div class="form-grid">
+            <div>
+              <label for="subscriber-email">Email</label>
+              <input id="subscriber-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="subscriber-name">Name <span class="optional-copy">optional</span></label>
+              <input id="subscriber-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+            </div>
+            <div>
+              <label for="subscriber-info-level">Information level</label>
+              <select id="subscriber-info-level" name="infoLevel">
+                <option value="light">Light — only the clearest updates</option>
+                <option value="standard" selected>Standard — the main Thriving Dancer rhythm</option>
+                <option value="full">Full — richer notes, context, and release detail</option>
+              </select>
+            </div>
+            <div>
+              <label for="subscriber-role">I’m signing up as</label>
+              <select id="subscriber-role" name="role">
+                <option>Dancer</option>
+                <option>Parent / family member</option>
+                <option>Teacher / studio support</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="full">
+              <span class="field-label">Send me</span>
+              <div class="check-stack">
+                <label class="check-row"><input type="checkbox" name="articleNotifications" checked /> <span>Article notifications when new public pieces go live</span></label>
+                <label class="check-row"><input type="checkbox" name="newsletters" checked /> <span>Newsletters and reflection updates</span></label>
+                <label class="check-row"><input type="checkbox" name="offers" /> <span>Workbook, preview, and offer announcements</span></label>
+              </div>
+            </div>
+            <div class="full">
+              <label for="subscriber-notes">Anything you especially want these emails to help with?</label>
+              <textarea id="subscriber-notes" name="notes" placeholder="Optional"></textarea>
+            </div>
+            <div class="full consent-box">
+              <label class="check-row"><input type="checkbox" name="consentAccepted" required /> <span>I agree to receive the Thriving Dancer email updates I selected, and I understand this temporary public form routes into the current subscriber workflow rather than a standalone review-pages database.</span></label>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" type="submit">Request email updates</button>
+            <a class="btn secondary" href="public-hub.html">Back to the hub</a>
+          </div>
+          <p class="small-note" style="margin-top:14px;">This public path is powered by the same temporary Formspree submission lane already used on the review-pages side, while the full subscriber backend and outbound preference-management logic stay in the canonical platform.</p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <span class="mini-kicker">What happens next</span>
+        <h2>How this public layer connects to the real subscriber system</h2>
+        <div class="info-points">
+          <div>• this review-pages form is the outward capture surface now</div>
+          <div>• it records the update mix requested from the temporary public hub</div>
+          <div>• the canonical subscriber system remains the source of truth for later preference-management and outbound sends</div>
+          <div>• workbook-only readers can still use the dedicated workbook signup on the offerings page</div>
+        </div>
+        <div class="portal-note">
+          <strong>Preference-management note:</strong>
+          <p class="small-note" style="margin:8px 0 0;">Because GitHub Pages is static, this outward page does not pretend to be the full tokenized manage-preferences portal. That deeper flow still belongs to the canonical subscriber layer that powers the outbound email system.</p>
+        </div>
+        <div class="link-row" style="margin-top:16px;"><a href="offerings.html">Workbook-specific path</a><a href="email-updates-privacy.html">Privacy note</a></div>
+      </section>
+    </section>
+  </main>
+  <script>
+    (function () {
+      const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduceMotion) {
+        requestAnimationFrame(() => document.body.classList.add('is-ready'));
+      } else {
+        document.body.classList.add('is-ready');
+      }
+      document.addEventListener('click', (event) => {
+        const link = event.target.closest('a[href]');
+        if (!link) return;
+        const href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (link.target === '_blank' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const url = new URL(link.href, window.location.href);
+        if (url.origin !== window.location.origin) return;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return;
+        if (reduceMotion) return;
+        event.preventDefault();
+        document.body.classList.add('is-leaving');
+        window.setTimeout(() => { window.location.href = url.href; }, 240);
+      });
+    })();
+  </script>
+
+  <div id="review-gate-overlay">
+    <div id="review-gate-card">
+      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
+      <h1>Enter passcode</h1>
+      <p>This public-content-hub review set is lightly gated so only the intended reviewer opens it. Enter the passcode from the message to continue.</p>
+      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
+      <button id="review-passcode-submit" type="button">Open review pages</button>
+      <div id="review-gate-error"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const PASSCODE = 'morning';
+      const STORAGE_KEY = 'td-content-hub-review-gate-2026-04-17';
+      const overlay = document.getElementById('review-gate-overlay');
+      const input = document.getElementById('review-passcode');
+      const button = document.getElementById('review-passcode-submit');
+      const error = document.getElementById('review-gate-error');
+      function unlock() { overlay.style.display = 'none'; }
+      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') { unlock(); return; }
+      button.addEventListener('click', function () {
+        if ((input.value || '').trim() === PASSCODE) {
+          sessionStorage.setItem(STORAGE_KEY, 'ok');
+          unlock();
+        } else {
+          error.textContent = 'That passcode is not correct.';
+          input.focus();
+        }
+      });
+      input.addEventListener('keydown', function (event) { if (event.key === 'Enter') button.click(); });
+    })();
+  </script>
+</body>
+</html>
