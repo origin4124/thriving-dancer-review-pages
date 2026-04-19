@@ -6,23 +6,14 @@
   <title>Email Updates | Thriving Dancer</title>
   <script>document.documentElement.classList.add('js-page-transition');</script>
   <link rel="stylesheet" href="site.css" />
-
-<style>
-#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
-#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
-#review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
-#review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
-#review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
-#review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
-#review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
-</style>
-
   <style>
-    .check-stack { display: grid; gap: 10px; }
-    .check-row { display: flex; gap: 10px; align-items: flex-start; color: #5f5365; }
-    .check-row input { width: auto; margin-top: 3px; }
-    .small-note { color: #5f5365; font-size: 0.95rem; }
-    .portal-note { margin-top: 18px; padding: 16px 18px; border: 1px solid #ead9e8; border-radius: 18px; background: #fcf7fb; }
+    #review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
+    #review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+    #review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
+    #review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
+    #review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
+    #review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
+    #review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -45,31 +36,27 @@
 
     <section class="hero">
       <div class="hero-media">
-        <div class="kicker-chip">Email updates</div>
+        <div class="kicker-chip">Professional email layer</div>
       </div>
       <div class="hero-body">
         <div class="eyebrow">Stay in the loop</div>
         <h1 class="hero-title">Choose the Thriving Dancer updates you actually want, and nothing extra.</h1>
-        <p>Get article notifications, newsletters, and workbook or offer updates. The manage and unsubscribe links in your emails keep the rest simple.</p>
+        <p>Get article notifications, newsletters, and workbook or offer updates. You can manage preferences or unsubscribe at any time without leaving the Thriving Dancer ecosystem.</p>
         <div class="meta-row"><span>Email required</span><span>Name optional</span><span>Topic-based preferences</span><span>Easy unsubscribe</span></div>
         <div class="cta-row">
           <a class="btn primary" href="#subscribe-panel">Set my preferences</a>
-          <a class="btn secondary" href="articles.html">Read first</a>
+          <a class="btn secondary" href="#access-panel">Already subscribed?</a>
         </div>
-        <div class="quote-card"><p>Minimal data, clear consent, and a cleaner path into the email list.</p></div>
+        <div class="quote-card"><p>This review-page signup now talks directly to the canonical local subscriber system instead of falling out to a third-party thank-you page.</p></div>
       </div>
     </section>
 
     <section class="grid-2">
       <section class="panel" id="subscribe-panel">
-        <span class="mini-kicker">Email updates</span>
+        <span class="mini-kicker">New subscription</span>
         <h2>Choose your update rhythm</h2>
-        <p class="small-note">This page collects your email, optional name, and the update preferences you choose here.</p>
-        <form class="form-shell" action="https://formspree.io/f/xvzvyddo" method="POST">
-          <input type="hidden" name="_subject" value="Thriving Dancer Email Updates Signup" />
-          <input type="hidden" name="_next" value="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/email-updates-thank-you.html" />
-          <input type="hidden" name="source" value="content-hub-review-subscribe" />
-          <input type="hidden" name="destinationLayer" value="review-pages-content-hub" />
+        <p class="small-note">This form stores only the minimum needed to manage your subscription: email, optional name, your preferences, consent timing, and secure hashed access tokens.</p>
+        <form class="form-shell subscriber-form" id="subscriber-form">
           <div class="form-grid">
             <div>
               <label for="subscriber-email">Email</label>
@@ -81,64 +68,132 @@
             </div>
             <div class="full">
               <span class="field-label">Send me</span>
-              <div class="check-stack">
-                <label class="check-row"><input type="checkbox" name="articleNotifications" checked /> <span>Article notifications when new public pieces go live</span></label>
-                <label class="check-row"><input type="checkbox" name="newsletters" checked /> <span>Newsletters and reflection updates</span></label>
-                <label class="check-row"><input type="checkbox" name="offers" /> <span>Workbook, preview, and offer announcements</span></label>
-              </div>
+              <label class="check-row"><input type="checkbox" name="articleNotifications" checked /> Article notifications when new public pieces go live</label>
+              <label class="check-row"><input type="checkbox" name="newsletters" checked /> Newsletters and reflection updates</label>
+              <label class="check-row"><input type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
             </div>
             <div class="full consent-box">
-              <label class="check-row"><input type="checkbox" name="consentAccepted" required /> <span>I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe from the links in those emails.</span></label>
+              <label class="check-row consent-row"><input type="checkbox" name="consentAccepted" required /> I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe at any time.</label>
             </div>
           </div>
           <div class="cta-row">
-            <button class="btn primary" type="submit">Request email updates</button>
-            <a class="btn secondary" href="public-hub.html">Back to the hub</a>
+            <button class="btn primary" type="submit">Save and continue</button>
+            <a class="btn secondary" href="public-hub.html">Back to the public hub</a>
           </div>
+          <div class="status-banner" id="subscribe-status" hidden></div>
         </form>
+        <div class="result-panel" id="confirm-panel" hidden>
+          <span class="mini-kicker">One more step</span>
+          <h3>Confirm this subscription</h3>
+          <p>A branded Thriving Dancer confirmation email should arrive after signup. This on-page button stays here as the fallback path if you are already holding a valid confirmation link.</p>
+          <div class="cta-row">
+            <button class="btn primary" id="confirm-subscription-button" type="button">Confirm my subscription</button>
+          </div>
+          <div class="status-banner" id="confirm-status" hidden></div>
+        </div>
+        <div class="result-panel" id="welcome-panel" hidden>
+          <span class="mini-kicker">You are in</span>
+          <h3>Welcome to Thriving Dancer</h3>
+          <p id="welcome-copy">Your subscription is active. Your welcome email and preferences links should now be in your inbox, and your portal is ready below.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="public-hub.html">Open the public hub</a>
+            <a class="btn secondary" href="articles.html">Browse articles</a>
+          </div>
+          <div class="status-banner" id="welcome-status" hidden></div>
+        </div>
       </section>
 
-      <section class="panel">
-        <span class="mini-kicker">What happens next</span>
-        <h2>What to expect after signup</h2>
-        <div class="info-points">
-          <div>• you choose article alerts, newsletters, and workbook or offer updates here</div>
-          <div>• your confirmation and follow-up emails include preference links</div>
-          <div>• each email includes an unsubscribe path</div>
-          <div>• the privacy note below explains what this page stores</div>
+      <section class="panel" id="access-panel">
+        <span class="mini-kicker">Manage preferences</span>
+        <h2>Already subscribed?</h2>
+        <p>Use your secure link if you have it, or request a fresh access link using your email address.</p>
+        <form class="form-shell access-request-form" id="access-request-form">
+          <div class="form-grid">
+            <div>
+              <label for="access-email">Email</label>
+              <input id="access-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn secondary" type="submit">Prepare a fresh access link</button>
+          </div>
+          <div class="status-banner" id="access-request-status" hidden></div>
+        </form>
+        <div class="portal-shell" id="subscriber-portal" hidden>
+          <span class="mini-kicker">Preferences portal</span>
+          <h3 id="portal-heading">Manage your preferences</h3>
+          <p class="small-note" id="portal-email-note"></p>
+          <div class="status-banner" id="portal-focus-status" hidden></div>
+          <div class="cta-row" id="portal-focus-actions" hidden>
+            <button class="btn secondary" id="portal-focus-button" type="button"></button>
+          </div>
+          <form class="form-shell" id="portal-form">
+            <div class="form-grid">
+              <div>
+                <label for="portal-name">Name <span class="optional-copy">optional</span></label>
+                <input id="portal-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="full">
+                <span class="field-label">Keep me subscribed to</span>
+                <label class="check-row"><input id="portal-articleNotifications" type="checkbox" name="articleNotifications" /> Article notifications when new public pieces go live</label>
+                <label class="check-row"><input id="portal-newsletters" type="checkbox" name="newsletters" /> Newsletters and reflection updates</label>
+                <label class="check-row"><input id="portal-offers" type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
+              </div>
+            </div>
+            <div class="cta-row">
+              <button class="btn primary" type="submit">Update preferences</button>
+              <button class="btn ghost" id="unsubscribe-button" type="button">Unsubscribe from all emails</button>
+            </div>
+            <div class="status-banner" id="portal-status" hidden></div>
+          </form>
         </div>
-        <div class="portal-note">
-          <strong>Preference-management note:</strong>
-          <p class="small-note" style="margin:8px 0 0;">This GitHub Pages surface is a lightweight signup page. Ongoing preference changes and unsubscribes happen through the subscriber links included in your emails.</p>
-        </div>
-        <div class="link-row" style="margin-top:16px;"><a href="offerings.html">Workbook-specific path</a><a href="email-updates-privacy.html">Privacy note</a></div>
       </section>
     </section>
 
-  <footer class="site-footer">
-    <div class="site-footer-grid">
-      <div>
-        <div class="site-footer-title">Thriving Dancer</div>
-        <p>Reflection, support, and steadier next steps for dancers after hard class days.</p>
-        <p class="mini-note">A cleaner reviewable public layer for articles, workbook support, and email updates.</p>
+    <section class="panel privacy-panel">
+      <div class="section-head">
+        <div class="eyebrow">Privacy and expectations</div>
+        <h2>What this subscription system keeps, and what it does not.</h2>
       </div>
-      <div>
-        <div class="site-footer-title">Explore</div>
-        <div class="site-footer-links"><a href="public-hub.html">Home</a><a href="articles.html">Articles</a><a href="offerings.html">Workbook</a><a href="about.html">About</a></div>
+      <div class="info-points">
+        <div>• required: your email address</div>
+        <div>• optional: your name</div>
+        <div>• stored so the system can work: your selected topic toggles, consent timing, and lifecycle status</div>
+        <div>• secure link tokens are stored as hashes, not raw token values</div>
+        <div>• no unnecessary notes, sensitive profile fields, or public exposure of subscriber details</div>
       </div>
-      <div>
-        <div class="site-footer-title">Email updates</div>
-        <p>Choose article alerts, newsletters, and workbook updates. Manage them from the links in your emails.</p>
-        <div class="site-footer-links"><a href="subscribe.html">Subscribe</a><a href="email-updates-privacy.html">Privacy</a></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="site-footer-grid">
+        <div>
+          <div class="site-footer-title">Thriving Dancer</div>
+          <p>Reflection, support, and steadier next steps for dancers after hard class days.</p>
+          <p class="mini-note">Made for dancers who want something clear, grounded, and useful after a hard class.</p>
+        </div>
+        <div>
+          <div class="site-footer-title">Explore</div>
+          <div class="site-footer-links"><a href="public-hub.html">Home</a><a href="articles.html">Articles</a><a href="offerings.html">Workbook</a><a href="about.html">About</a></div>
+        </div>
+        <div>
+          <div class="site-footer-title">Email updates</div>
+          <p>Choose article alerts, newsletters, and workbook updates. Adjust them any time.</p>
+          <div class="site-footer-links"><a href="subscribe.html">Subscribe</a><a href="subscribe.html#access-panel">Manage preferences</a><a href="email-updates-privacy.html">Privacy</a></div>
+        </div>
       </div>
-    </div>
-    <div class="site-footer-meta">
-      <span><strong>Thriving Dancer</strong></span>
-      <span>Review pages</span>
-    </div>
-  </footer>
+      <div class="site-footer-meta">
+        <span><strong>Thriving Dancer</strong></span>
+        <span>Review pages</span>
+      </div>
+    </footer>
   </main>
 
+  <script>
+    window.TD_SUBSCRIBER_CONFIG = {
+      apiBase: 'http://127.0.0.1:8793/api/v1/subscribers'
+    };
+  </script>
+  <script src="subscription.js"></script>
   <script>
     (function () {
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -163,7 +218,6 @@
       });
     })();
   </script>
-
 
   <div id="review-gate-overlay">
     <div id="review-gate-card">
