@@ -1,9 +1,11 @@
 const TD_SUBSCRIBER_CONFIG = window.TD_SUBSCRIBER_CONFIG || {};
-const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0.0.1:8793/api/v1/subscribers').replace(/\/+$/, '');
+const DEFAULT_SUBSCRIBER_API_BASE = 'http://127.0.0.1:8793/api/v1/subscribers';
+const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || DEFAULT_SUBSCRIBER_API_BASE).replace(/\/+$/, '');
 
 (function () {
   const subscribeForm = document.getElementById('subscriber-form');
   const subscribeStatus = document.getElementById('subscribe-status');
+  const subscribeButton = subscribeForm?.querySelector('button[type="submit"]');
   const confirmPanel = document.getElementById('confirm-panel');
   const confirmButton = document.getElementById('confirm-subscription-button');
   const confirmStatus = document.getElementById('confirm-status');
@@ -12,6 +14,7 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
   const welcomeStatus = document.getElementById('welcome-status');
   const accessRequestForm = document.getElementById('access-request-form');
   const accessRequestStatus = document.getElementById('access-request-status');
+  const accessRequestButton = accessRequestForm?.querySelector('button[type="submit"]');
   const portalShell = document.getElementById('subscriber-portal');
   const portalForm = document.getElementById('portal-form');
   const portalStatus = document.getElementById('portal-status');
@@ -33,11 +36,6 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
       label: 'newsletters',
       buttonLabel: 'Pause newsletters',
       focusMessage: 'This page is focused on newsletters. You can pause just those here or use the full portal below.',
-    },
-    offers: {
-      label: 'offer updates',
-      buttonLabel: 'Turn off offer updates',
-      focusMessage: 'This page is focused on offer updates. You can turn just those off here or use the full portal below.',
     },
   };
 
@@ -61,6 +59,11 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     }
   }
 
+  function checkboxValue(form, name) {
+    const field = form?.elements?.namedItem(name);
+    return Boolean(field && field.checked);
+  }
+
   function focusedPreferenceKey() {
     const focus = String(query.get('focus') || '').trim();
     return Object.prototype.hasOwnProperty.call(FOCUS_META, focus) ? focus : '';
@@ -79,10 +82,10 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     return {
       email: String(data.get('email') || '').trim(),
       name: String(data.get('name') || '').trim(),
-      articleNotifications: data.get('articleNotifications') === 'on',
-      newsletters: data.get('newsletters') === 'on',
-      offers: data.get('offers') === 'on',
-      consentAccepted: data.get('consentAccepted') === 'on',
+      articleNotifications: checkboxValue(form, 'articleNotifications'),
+      newsletters: checkboxValue(form, 'newsletters'),
+      offers: false,
+      consentAccepted: checkboxValue(form, 'consentAccepted'),
       consentText: 'I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe at any time.',
       sourcePage: window.location.pathname.replace(/^\//, '') || 'content-hub-review/public-hub.html',
       baseUrl: currentPageBaseUrl(),
@@ -104,12 +107,62 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     setStatus(welcomeStatus, tone, message);
   }
 
+  function apiHostLooksLocal(apiUrl) {
+    try {
+      const parsed = new URL(apiUrl, window.location.href);
+      const host = (parsed.hostname || '').toLowerCase();
+      return host === '127.0.0.1' || host === 'localhost' || host === '::1';
+    } catch {
+      return false;
+    }
+  }
+
+  function pageIsLocal() {
+    const host = (window.location.hostname || '').toLowerCase();
+    return !host || host === '127.0.0.1' || host === 'localhost' || host === '::1';
+  }
+
+  function publicSignupUnavailable() {
+    return !pageIsLocal() && apiHostLooksLocal(SUBSCRIBER_API_BASE);
+  }
+
+  const PUBLIC_BLOCKER_MESSAGE = 'Email signup is temporarily unavailable on this public preview while the form is being moved off the private local-only delivery server. The articles are live, but managed signup and preference links are not public yet.';
+
+  function applyPublicPreviewHold() {
+    if (subscribeButton) subscribeButton.disabled = true;
+    if (accessRequestButton) accessRequestButton.disabled = true;
+    if (confirmButton) confirmButton.disabled = true;
+    if (subscribeForm) {
+      Array.from(subscribeForm.querySelectorAll('input, button')).forEach((node) => {
+        if (node.name === 'articleNotifications' || node.name === 'newsletters' || node.name === 'consentAccepted' || node.name === 'email' || node.name === 'name' || node.tagName === 'BUTTON') {
+          node.disabled = true;
+        }
+      });
+    }
+    if (accessRequestForm) {
+      Array.from(accessRequestForm.querySelectorAll('input, button')).forEach((node) => {
+        node.disabled = true;
+      });
+    }
+    setStatus(subscribeStatus, 'warn', PUBLIC_BLOCKER_MESSAGE);
+    setStatus(accessRequestStatus, 'warn', 'Preference-link requests are paused on this public preview for the same reason: the current mail backend only exists on the private local build.');
+    if (confirmPanel) confirmPanel.hidden = true;
+  }
+
   async function postJson(url, body) {
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(body || {}),
-    });
+    let response;
+    try {
+      response = await fetch(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body || {}),
+      });
+    } catch (error) {
+      if (publicSignupUnavailable()) {
+        throw new Error(PUBLIC_BLOCKER_MESSAGE);
+      }
+      throw new Error('Unable to reach the Thriving Dancer signup service right now. If you are on the local/private build, make sure the local platform is running on this machine.');
+    }
     const payload = await response.json().catch(() => ({}));
     if (!response.ok) {
       throw new Error(payload.error || 'Request failed.');
@@ -148,9 +201,10 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     portalHeading.textContent = tokenPurpose === 'unsubscribe' ? 'Confirm or adjust your unsubscribe choice' : 'Manage your email preferences';
     portalEmailNote.textContent = `Managing updates for ${subscriber.emailMasked || subscriber.email}. Status: ${subscriber.status}.`;
     portalForm.elements.name.value = subscriber.name || '';
-    document.getElementById('portal-articleNotifications').checked = Boolean(subscriber.articleNotifications);
-    document.getElementById('portal-newsletters').checked = Boolean(subscriber.newsletters);
-    document.getElementById('portal-offers').checked = Boolean(subscriber.offers);
+    const articleBox = document.getElementById('portal-articleNotifications');
+    const newsletterBox = document.getElementById('portal-newsletters');
+    if (articleBox) articleBox.checked = Boolean(subscriber.articleNotifications);
+    if (newsletterBox) newsletterBox.checked = Boolean(subscriber.newsletters);
     if (unsubscribeButton) {
       unsubscribeButton.textContent = subscriber.status === 'unsubscribed' ? 'Already unsubscribed' : 'Unsubscribe from all emails';
       unsubscribeButton.disabled = subscriber.status === 'unsubscribed';
@@ -171,7 +225,10 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
         setStatus(portalStatus, 'warn', 'This link can unsubscribe you from every Thriving Dancer email, or you can adjust preferences instead.');
       }
     } catch (error) {
-      setStatus(portalStatus, 'error', error.message || 'Unable to load preferences.');
+      const message = publicSignupUnavailable()
+        ? 'Managed preferences are not available on this public preview yet because the current backend is still local/private only.'
+        : (error.message || 'Unable to load preferences.');
+      setStatus(portalStatus, 'error', message);
       if (portalShell) portalShell.hidden = false;
     }
   }
@@ -203,7 +260,7 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     } catch (error) {
       setStatus(confirmStatus, 'error', error.message || 'Unable to confirm your subscription.');
     } finally {
-      if (confirmButton) confirmButton.disabled = false;
+      if (confirmButton && !publicSignupUnavailable()) confirmButton.disabled = false;
     }
   }
 
@@ -215,9 +272,9 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
       const payload = {
         token: activePortalToken,
         name: String(portalForm.elements.name.value || '').trim(),
-        articleNotifications: document.getElementById('portal-articleNotifications').checked,
-        newsletters: document.getElementById('portal-newsletters').checked,
-        offers: document.getElementById('portal-offers').checked,
+        articleNotifications: checkboxValue(portalForm, 'articleNotifications'),
+        newsletters: checkboxValue(portalForm, 'newsletters'),
+        offers: false,
       };
       payload[focusKey] = false;
       const response = await postJson(`${SUBSCRIBER_API_BASE}/preferences`, payload);
@@ -227,6 +284,10 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     } catch (error) {
       setStatus(portalFocusStatus, 'error', error.message || `Unable to update ${meta.label}.`);
     }
+  }
+
+  if (publicSignupUnavailable()) {
+    applyPublicPreviewHold();
   }
 
   if (subscribeForm) {
@@ -255,7 +316,7 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
           window.history.replaceState({}, '', nextUrl.toString());
         }
       } catch (error) {
-        setStatus(subscribeStatus, 'error', error.message || 'Unable to save your subscription. Make sure the Thriving Dancer local platform is running on this machine.');
+        setStatus(subscribeStatus, 'error', error.message || 'Unable to save your subscription.');
       }
     });
   }
@@ -298,9 +359,9 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
         const payload = await postJson(`${SUBSCRIBER_API_BASE}/preferences`, {
           token: activePortalToken,
           name: String(data.get('name') || '').trim(),
-          articleNotifications: data.get('articleNotifications') === 'on',
-          newsletters: data.get('newsletters') === 'on',
-          offers: data.get('offers') === 'on',
+          articleNotifications: checkboxValue(portalForm, 'articleNotifications'),
+          newsletters: checkboxValue(portalForm, 'newsletters'),
+          offers: false,
         });
         fillPortal(payload.subscriber, portalTokenPurpose || 'manage');
         setStatus(portalStatus, 'success', payload.message || 'Preferences updated.');
@@ -332,10 +393,10 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
     });
   }
 
-  if (pendingConfirmToken && confirmPanel) {
+  if (pendingConfirmToken && confirmPanel && !publicSignupUnavailable()) {
     confirmPanel.hidden = false;
   }
-  if (query.get('confirm')) {
+  if (query.get('confirm') && !publicSignupUnavailable()) {
     confirmSubscription(query.get('confirm'));
   }
   if (activePortalToken) {

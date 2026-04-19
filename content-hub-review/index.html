@@ -28,7 +28,6 @@
         <nav class="nav">
           <a href="public-hub.html" aria-current="page">Home</a>
           <a href="articles.html">Articles</a>
-          <a href="offerings.html">Offerings</a>
           <a href="public-hub.html#email-updates">Join updates</a>
           <a href="about.html">About</a>
         </nav>
@@ -78,7 +77,7 @@
         <div class="meta-row"><span>Reading shelf</span><span>Curated</span><span>No filler</span></div>
         <h3><a href="articles.html">Browse the current shelf</a></h3>
         <p>The library now stays intentionally small while weaker sample pieces and placeholder-heavy pages are retired.</p>
-        <div class="link-row"><a href="articles.html">Open the article shelf</a><a href="offerings.html">See the workbook lane</a></div>
+        <div class="link-row"><a href="articles.html">Open the article shelf</a><a href="public-hub.html#email-updates">Join updates</a></div>
       </article></div>
     </section>
 
@@ -86,7 +85,7 @@
       <section class="panel" id="email-updates">
         <span class="mini-kicker">Join updates</span>
         <h2>Choose the Thriving Dancer updates you actually want.</h2>
-        <p class="small-note">This is now the primary signup area for article alerts, newsletters, and workbook or offer updates. It stores only the minimum needed to run a real preferences system.</p>
+        <p class="small-note">This is the main updates area for article alerts and newsletters. On the public preview, the email backend is temporarily being moved off the private local server, so this section now states that clearly instead of failing with a raw fetch error.</p>
         <form class="form-shell subscriber-form" id="subscriber-form">
           <div class="form-grid">
             <div>
@@ -101,15 +100,14 @@
               <span class="field-label">Send me</span>
               <label class="check-row"><input type="checkbox" name="articleNotifications" checked /> Article notifications when new public pieces go live</label>
               <label class="check-row"><input type="checkbox" name="newsletters" checked /> Newsletters and reflection updates</label>
-              <label class="check-row"><input type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
-            </div>
+                          </div>
             <div class="full consent-box">
               <label class="check-row consent-row"><input type="checkbox" name="consentAccepted" required /> I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe at any time.</label>
             </div>
           </div>
           <div class="cta-row">
             <button class="btn primary" type="submit">Save and continue</button>
-            <a class="btn secondary" href="offerings.html#workbook-signup">Workbook details</a>
+            <a class="btn secondary" href="articles.html">Browse articles</a>
           </div>
           <div class="status-banner" id="subscribe-status" hidden></div>
         </form>
@@ -128,7 +126,7 @@
           <p id="welcome-copy">Your subscription is active. Your welcome email and preferences links should now be in your inbox, and your portal is ready below.</p>
           <div class="cta-row">
             <a class="btn primary" href="articles.html">Browse articles</a>
-            <a class="btn secondary" href="offerings.html">See the workbook path</a>
+            <a class="btn secondary" href="public-hub.html#email-access">Manage preferences</a>
           </div>
           <div class="status-banner" id="welcome-status" hidden></div>
         </div>
@@ -168,8 +166,7 @@
                 <span class="field-label">Keep me subscribed to</span>
                 <label class="check-row"><input id="portal-articleNotifications" type="checkbox" name="articleNotifications" /> Article notifications when new public pieces go live</label>
                 <label class="check-row"><input id="portal-newsletters" type="checkbox" name="newsletters" /> Newsletters and reflection updates</label>
-                <label class="check-row"><input id="portal-offers" type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
-              </div>
+                              </div>
             </div>
             <div class="cta-row">
               <button class="btn primary" type="submit">Update preferences</button>
@@ -179,10 +176,10 @@
           </form>
         </div>
         <div class="related-box" style="margin-top:18px;">
-          <span class="mini-kicker">Workbook lane</span>
-          <h3>Want the workbook updates specifically?</h3>
-          <p>Turn on workbook and offer announcements here, then use the workbook page for the fuller context and promise.</p>
-          <div class="link-row"><a href="offerings.html#workbook-signup">Workbook details</a><a href="offerings.html">Open offerings</a></div>
+          <span class="mini-kicker">What is live now</span>
+          <h3>What can a reader do from this preview?</h3>
+          <p>Read the current article shelf now, then return here later for managed email signup once the public delivery endpoint is live.</p>
+          <div class="link-row"><a href="articles.html">Browse articles</a><a href="about.html">About Thriving Dancer</a></div>
         </div>
       </section>
     </section>
@@ -210,11 +207,11 @@
       </div>
       <div>
         <div class="site-footer-title">Explore</div>
-        <div class="site-footer-links"><a href="public-hub.html">Home</a><a href="articles.html">Articles</a><a href="offerings.html">Workbook</a><a href="about.html">About</a></div>
+        <div class="site-footer-links"><a href="public-hub.html">Home</a><a href="articles.html">Articles</a><a href="public-hub.html#email-updates">Join updates</a><a href="about.html">About</a></div>
       </div>
       <div>
         <div class="site-footer-title">Email updates</div>
-        <p>Join from the home page, then adjust article alerts, newsletters, and workbook updates any time.</p>
+        <p>Join from the home page, then adjust article alerts and newsletters any time.</p>
         <div class="site-footer-links"><a href="public-hub.html#email-updates">Join updates</a><a href="public-hub.html#email-access">Manage preferences</a></div>
       </div>
     </div>
