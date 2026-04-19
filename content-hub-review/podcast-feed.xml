@@ -4,103 +4,93 @@
   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Thriving Dancer Podcast</title>
-    <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/public-hub.html</link>
+    <link>https://thrivingdancer.shop/public-hub.html</link>
     <description>Audio-first practice, interview, and reflection episodes for the Thriving Dancer system.</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Apr 2026 03:28:51 GMT</lastBuildDate>
-    <atom:link href="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-feed.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Apr 2026 17:43:12 GMT</lastBuildDate>
+    <atom:link href="https://thrivingdancer.shop/podcast-feed.xml" rel="self" type="application/rss+xml" />
     <itunes:author>Thriving Dancer</itunes:author>
     <itunes:summary>Audio-first practice, interview, and reflection episodes for the Thriving Dancer system.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
     <item>
-      <title>Picking Up Choreography More Quickly</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-picking-up-choreography-more-quickly-legacy-audio-review-page.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-picking-up-choreography-more-quickly-legacy-audio-review-page.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:28:51 GMT</pubDate>
+      <title>Picking Up Choreography After Years of Salsa</title>
+      <link>https://thrivingdancer.shop/podcast-picking-up-choreography-after-years-of-salsa-legacy-audio-review.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-picking-up-choreography-after-years-of-salsa-legacy-audio-review.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:43:12 GMT</pubDate>
       <description>A practical look at how previous dance experience can speed up learning new choreography.
 
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/picking-up-choreography-more-quickly.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/picking-up-choreography-more-quickly/picking-up-choreography-more-quickly-support-audio.mp3" type="audio/mpeg" />
-    </item>
-    <item>
-      <title>Intro for Restorative Yoga</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-intro-for-restorative-yoga-legacy-audio-review-page.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-intro-for-restorative-yoga-legacy-audio-review-page.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:27:56 GMT</pubDate>
-      <description>A gentle restorative practice framed around releasing tension, softening the nervous system, and settling back into a steadier rhythm.
-
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/intro-for-restorative-yoga.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/intro-for-restorative-yoga/intro-for-restorative-yoga-support-audio.mp3" type="audio/mpeg" />
-    </item>
-    <item>
-      <title>Dave&apos;s Gone By Interview: Jay Handelman and Carrie Seidman: Local Arts Coverage, Criticism, and Nonprofit Reporting</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-dave-s-gone-by-interview-jay-handelman-carrie-seidman-legacy-aud.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-dave-s-gone-by-interview-jay-handelman-carrie-seidman-legacy-aud.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:27:12 GMT</pubDate>
-      <description>A focused look at shrinking local arts coverage, why criticism still matters, and how nonprofit reporting might keep that work alive.
-
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/dave-s-gone-by-interview-jay-handelman-and-carrie-seidman-local-arts-cov.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/dave-s-gone-by-interview-jay-handelman-and-carrie-seidma/dave-s-gone-by-interview-jay-handelman-and-carrie-seidma.mp3" type="audio/mpeg" />
-    </item>
-    <item>
-      <title>Dance Podcast</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-dance-podcast-legacy-audio-review-page.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-dance-podcast-legacy-audio-review-page.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:24:43 GMT</pubDate>
-      <description>A process-focused piece about improvisation, projections, and choreographing together inside a shifting group workflow.
-
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/dance-podcast.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/dance-podcast/dance-podcast-support-audio.mp3" type="audio/mpeg" />
-    </item>
-    <item>
-      <title>Clone Dance Party: Local Arts Coverage and Why Criticism Still Matters</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-clonedanceparty-legacy-audio-review-page.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-clonedanceparty-legacy-audio-review-page.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:24:31 GMT</pubDate>
-      <description>A focused look at shrinking local arts coverage, why criticism still matters, and how nonprofit reporting might keep that work alive.
-
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/clone-dance-party-local-arts-coverage-and-why-criticism-still-matters.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/clone-dance-party-local-arts-coverage-and-why-criticism/clone-dance-party-support-audio.mp3" type="audio/mpeg" />
-    </item>
-    <item>
-      <title>Heather Robles interview — interview notes and takeaways</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:16:41 GMT</pubDate>
-      <description>We very often in the United States tend to be in a silo, especially where I live in New York.
-
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/heather-robles-interview-interview-notes-and-takeaways.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/heather-robles-interview-interview-notes-and-takeaways/heather-robles-interview-support-audio.mp3" type="audio/mpeg" />
+Companion article: https://thrivingdancer.shop/picking-up-choreography-after-years-of-salsa.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/picking-up-choreography-after-years-of-salsa/picking-up-choreography-after-years-of-salsa-support-aud.mp3" type="audio/mpeg" />
     </item>
     <item>
       <title>Me Behind This Exuberant Dance Number Planning, Precision, and Practice</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-me-behind-this-exuberant-dance-number-planning-precision-and-pra.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-me-behind-this-exuberant-dance-number-planning-precision-and-pra.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:13:50 GMT</pubDate>
+      <link>https://thrivingdancer.shop/podcast-me-behind-this-exuberant-dance-number-planning-precision-and-pra.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-me-behind-this-exuberant-dance-number-planning-precision-and-pra.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:42:46 GMT</pubDate>
       <description>A practical close look at how planning, repetition, and precision shape a big dance number long before it feels effortless onstage.
 
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/me-behind-this-exuberant-dance-number-planning-precision-and-practice.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/me-behind-this-exuberant-dance-number-planning-precision/me-behind-this-exuberant-dance-number-planning-precision.mp3" type="audio/mpeg" />
+Companion article: https://thrivingdancer.shop/me-behind-this-exuberant-dance-number-planning-precision-and-practice.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/me-behind-this-exuberant-dance-number-planning-precision/me-behind-this-exuberant-dance-number-planning-precision.mp3" type="audio/mpeg" />
     </item>
     <item>
-      <title>Picking Up Choreography After Years of Salsa</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-picking-up-choreography-after-years-of-salsa-legacy-audio-review.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-picking-up-choreography-after-years-of-salsa-legacy-audio-review.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:11:58 GMT</pubDate>
+      <title>Intro for Restorative Yoga</title>
+      <link>https://thrivingdancer.shop/podcast-intro-for-restorative-yoga-legacy-audio-review-page.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-intro-for-restorative-yoga-legacy-audio-review-page.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:42:28 GMT</pubDate>
+      <description>A gentle restorative practice framed around releasing tension, softening the nervous system, and settling back into a steadier rhythm.
+
+Companion article: https://thrivingdancer.shop/intro-for-restorative-yoga.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/intro-for-restorative-yoga/intro-for-restorative-yoga-support-audio.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Dance Podcast</title>
+      <link>https://thrivingdancer.shop/podcast-dance-podcast-legacy-audio-review-page.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-dance-podcast-legacy-audio-review-page.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:42:11 GMT</pubDate>
+      <description>A process-focused piece about improvisation, projections, and choreographing together inside a shifting group workflow.
+
+Companion article: https://thrivingdancer.shop/dance-podcast.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/dance-podcast/dance-podcast-support-audio.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Clone Dance Party: Local Arts Coverage and Why Criticism Still Matters</title>
+      <link>https://thrivingdancer.shop/podcast-clonedanceparty-legacy-audio-review-page.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-clonedanceparty-legacy-audio-review-page.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:04:04 GMT</pubDate>
+      <description>A focused look at shrinking local arts coverage, why criticism still matters, and how nonprofit reporting might keep that work alive.
+
+Companion article: https://thrivingdancer.shop/clone-dance-party-local-arts-coverage-and-why-criticism-still-matters.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/clone-dance-party-local-arts-coverage-and-why-criticism/clone-dance-party-support-audio.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Picking Up Choreography More Quickly</title>
+      <link>https://thrivingdancer.shop/podcast-picking-up-choreography-more-quickly-legacy-audio-review-page.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-picking-up-choreography-more-quickly-legacy-audio-review-page.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:03:23 GMT</pubDate>
       <description>A practical look at how previous dance experience can speed up learning new choreography.
 
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/picking-up-choreography-after-years-of-salsa.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/picking-up-choreography-after-years-of-salsa/picking-up-choreography-after-years-of-salsa-support-aud.mp3" type="audio/mpeg" />
+Companion article: https://thrivingdancer.shop/picking-up-choreography-more-quickly.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/picking-up-choreography-more-quickly/picking-up-choreography-more-quickly-support-audio.mp3" type="audio/mpeg" />
     </item>
     <item>
-      <title>Heather Robles interview 2 — interview notes and takeaways</title>
-      <link>https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-travelogue-media-podcast-interview-heather-robles-2-legacy-audio.html</link>
-      <guid isPermaLink="true">https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-travelogue-media-podcast-interview-heather-robles-2-legacy-audio.html</guid>
-      <pubDate>Sun, 19 Apr 2026 03:02:14 GMT</pubDate>
+      <title>Dave&apos;s Gone By Interview: Jay Handelman and Carrie Seidman: Local Arts Coverage, Criticism, and Nonprofit Reporting</title>
+      <link>https://thrivingdancer.shop/podcast-dave-s-gone-by-interview-jay-handelman-carrie-seidman-legacy-aud.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-dave-s-gone-by-interview-jay-handelman-carrie-seidman-legacy-aud.html</guid>
+      <pubDate>Sun, 19 Apr 2026 17:02:25 GMT</pubDate>
+      <description>A focused look at shrinking local arts coverage, why criticism still matters, and how nonprofit reporting might keep that work alive.
+
+Companion article: https://thrivingdancer.shop/dave-s-gone-by-interview-jay-handelman-and-carrie-seidman-local-arts-cov.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/dave-s-gone-by-interview-jay-handelman-and-carrie-seidma/dave-s-gone-by-interview-jay-handelman-and-carrie-seidma.mp3" type="audio/mpeg" />
+    </item>
+    <item>
+      <title>Heather Robles interview — interview notes and takeaways</title>
+      <link>https://thrivingdancer.shop/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html</link>
+      <guid isPermaLink="true">https://thrivingdancer.shop/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html</guid>
+      <pubDate>Sun, 19 Apr 2026 16:53:41 GMT</pubDate>
       <description>We very often in the United States tend to be in a silo, especially where I live in New York.
 
-Companion article: https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/heather-robles-interview-2-interview-notes-and-takeaways.html</description>
-      <enclosure url="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/heather-robles-interview-2-interview-notes-and-takeaways/heather-robles-interview-2-support-audio.mp3" type="audio/mpeg" />
+Companion article: https://thrivingdancer.shop/heather-robles-interview-interview-notes-and-takeaways.html</description>
+      <enclosure url="https://thrivingdancer.shop/media/heather-robles-interview-interview-notes-and-takeaways/heather-robles-interview-support-audio.mp3" type="audio/mpeg" />
     </item>
   </channel>
 </rss>

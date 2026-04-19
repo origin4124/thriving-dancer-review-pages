@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="site.css" />
 
 <style>
-#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
-#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
+#review-gate-overlay { position: fixed; inset: 0; background: rgb(34, 22, 40); display: grid; place-items: center; padding: 20px; z-index: 9999; overflow: auto; }
+#review-gate-card { width: 100%; max-width: 420px; margin: auto; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
 #review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
 #review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
 #review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
@@ -28,7 +28,7 @@
         <nav class="nav">
           <a href="public-hub.html">Home</a>
           <a href="articles.html">Articles</a>
-          <a href="offerings.html">Offerings</a>
+          <a href="about.html">About</a>
           <a href="about.html">About</a>
         </nav>
       </div>
@@ -55,26 +55,32 @@
         <div class="section-head">
           <div class="eyebrow">Watch or listen</div>
           <h2>Supporting media for this article</h2>
-          <p>This source currently exceeds the surfaced YouTube account/channel limit, so the article keeps the podcast/support-audio lane visible without a broken watch link.</p>
+          <p>Use the surfaced YouTube lane as the real outward watch/listen path for this article. The local audio asset stays here only as a browser-review fallback.</p>
         </div>
         <div class="media-grid">
           <div class="media-card">
             <span class="mini-kicker">Video version</span>
-            <div class="media-meta-row"><span>Temporarily blocked</span><span>Article support lane</span><span>Watch lane paused</span></div>
+            <div class="media-meta-row"><span>YouTube-linked</span><span>Article support lane</span><span>Browser playable</span></div>
             <h3>Heather Robles interview — interview notes and takeaways — video version</h3>
-            <p>Blocked YouTube upload before send: media is 41.5 minutes, which exceeds the current surfaced-channel safe limit of 15 minutes for this account/channel state.</p>
+            <p>This article is linked to the actual YouTube support video for the piece.</p>
             <div class="media-frame">
-              <div style="display:flex;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;color:#6a5a52;">Blocked YouTube upload before send: media is 41.5 minutes, which exceeds the current surfaced-channel safe limit of 15 minutes for this account/channel state.</div>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/ANOCidL6eQI?rel=0"
+                title="Heather Robles interview — interview notes and takeaways — video version"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
             </div>
-            
+            <div class="link-row"><a href="https://www.youtube.com/watch?v=ANOCidL6eQI">Watch the black-screen video version</a></div>
           </div>
           <div class="media-card">
             <span class="mini-kicker">Legacy review audio page</span>
-            <div class="media-meta-row"><span>Legacy optional review page — primary outward lane stays the content-hub article with embedded/source audio</span><span>Article support lane</span><span>Browser playable</span></div>
+            <div class="media-meta-row"><span>YouTube / YouTube Music target lane</span><span>Article support lane</span><span>Browser playable</span></div>
             <h3>Heather Robles interview — interview notes and takeaways — legacy audio review page</h3>
             <p>Open the linked listening surface or use the in-browser player below.</p>
-            <audio controls preload="none" style="width:100%;margin-top:12px;"><source src="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/media/heather-robles-interview-interview-notes-and-takeaways/heather-robles-interview-support-audio.mp3" type="audio/mpeg" />Your browser does not support the audio element.</audio>
-            <div class="link-row"><a href="https://origin4124.github.io/thriving-dancer-review-pages/content-hub-review/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html">Open the legacy audio review page</a></div>
+            <audio controls preload="none" style="width:100%;margin-top:12px;"><source src="https://thrivingdancer.shop/media/heather-robles-interview-interview-notes-and-takeaways/heather-robles-interview-support-audio.mp3" type="audio/mpeg" />Your browser does not support the audio element.</audio>
+            <div class="link-row"><a href="https://thrivingdancer.shop/podcast-travelogue-media-podcast-interview-heather-robles-legacy-audio-r.html">Watch or listen on YouTube</a></div>
           </div>
         </div>
       </section>
@@ -82,7 +88,7 @@
         <h2>Next steps</h2>
         <div class="grid-2">
           <div class="related-box"><span class="mini-kicker">Article library</span><h3>Stay inside the article shelf</h3><p>Move into another article if you want a different angle on the same kind of dance-day problem without leaving this reading path.</p><div class="link-row"><a href="articles.html">Browse articles</a></div></div>
-          <div class="related-box"><span class="mini-kicker">Workbook</span><h3>Want practical follow-through?</h3><p>The workbook is where these ideas become prompts, reflection structure, and post-class support tools.</p><div class="link-row"><a href="offerings.html">See the workbook</a><a href="offerings.html#workbook-signup">Join the list</a></div></div>
+          <div class="related-box"><span class="mini-kicker">Stay connected</span><h3>Want practical follow-through?</h3><p>Join the email updates for new articles, reflection notes, and calmer next-step support without leaving the current reading flow.</p><div class="link-row"><a href="public-hub.html#email-updates">Join updates</a><a href="articles.html">Browse articles</a></div></div>
         </div>
       </section>
       <footer class="surface-footer">
@@ -93,8 +99,8 @@
           </div>
           <div>
             <div class="surface-footer-title">Next steps</div>
-            <p>Choose another article, join the email list, or take the workbook path if you want more structured follow-through.</p>
-            <div class="surface-footer-links"><a href="articles.html">Articles</a><a href="public-hub.html#email-updates">Email updates</a><a href="offerings.html">Workbook</a></div>
+            <p>Choose another article, join the email list, or keep exploring the current reading shelf.</p>
+            <div class="surface-footer-links"><a href="articles.html">Articles</a><a href="public-hub.html#email-updates">Email updates</a><a href="about.html">About</a></div>
           </div>
         </div>
       </footer>
