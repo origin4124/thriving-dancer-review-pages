@@ -84,7 +84,7 @@ const SUBSCRIBER_API_BASE = String(TD_SUBSCRIBER_CONFIG.apiBase || 'http://127.0
       offers: data.get('offers') === 'on',
       consentAccepted: data.get('consentAccepted') === 'on',
       consentText: 'I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe at any time.',
-      sourcePage: 'content-hub-review/subscribe.html',
+      sourcePage: window.location.pathname.replace(/^\//, '') || 'content-hub-review/public-hub.html',
       baseUrl: currentPageBaseUrl(),
       sendConfirmationEmail: true,
     };

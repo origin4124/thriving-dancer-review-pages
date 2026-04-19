@@ -26,10 +26,10 @@
           <div class="brand-subtitle">Reflection, support, and steadier next steps for dancers after hard class days.</div>
         </div>
         <nav class="nav">
-          <a href="public-hub.html">Home</a>
+          <a href="public-hub.html" aria-current="page">Home</a>
           <a href="articles.html">Articles</a>
           <a href="offerings.html">Offerings</a>
-          <a href="subscribe.html">Email updates</a>
+          <a href="public-hub.html#email-updates">Join updates</a>
           <a href="about.html">About</a>
         </nav>
       </div>
@@ -47,7 +47,7 @@
         <div class="cta-row">
           <a class="btn primary" href="intro-for-restorative-yoga.html">Open featured article</a>
           <a class="btn secondary" href="articles.html">Browse all articles</a>
-          <a class="btn secondary" href="subscribe.html">Get email updates</a>
+          <a class="btn secondary" href="#email-updates">Join updates</a>
           <a class="btn secondary" href="podcast-feed.xml">Open podcast feed</a>
         </div>
         <div class="quote-card"><p>For the days when class keeps following a dancer home, this project stays close to confidence, reflection, and the next steadier move.</p></div>
@@ -74,25 +74,130 @@
         <p>An interview-based article about independent work, community, and artistic range.</p>
         <div class="link-row"><a href="heather-robles-interview-interview-notes-and-takeaways.html">Open article</a></div>
       </article><article class="list-card">
-        <div class="thumb">📝</div>
-        <div class="meta-row"><span>Article</span><span>6 min read</span><span>Companion available</span></div>
-        <h3><a href="article-reflection-after-hard-class.html">Three ways dancers can use reflection after a hard class</a></h3>
-        <p>A steadier evergreen reading path for dancers who want a concrete reset framework after a rough class.</p>
-        <div class="link-row"><a href="article-reflection-after-hard-class.html">Open article</a><a href="episode-confidence-after-hard-class.html">Related article</a></div>
+        <div class="thumb">📚</div>
+        <div class="meta-row"><span>Reading shelf</span><span>Curated</span><span>No filler</span></div>
+        <h3><a href="articles.html">Browse the current shelf</a></h3>
+        <p>The library now stays intentionally small while weaker sample pieces and placeholder-heavy pages are retired.</p>
+        <div class="link-row"><a href="articles.html">Open the article shelf</a><a href="offerings.html">See the workbook lane</a></div>
       </article></div>
     </section>
 
-    <section class="panel">
+    <section class="grid-2">
+      <section class="panel" id="email-updates">
+        <span class="mini-kicker">Join updates</span>
+        <h2>Choose the Thriving Dancer updates you actually want.</h2>
+        <p class="small-note">This is now the primary signup area for article alerts, newsletters, and workbook or offer updates. It stores only the minimum needed to run a real preferences system.</p>
+        <form class="form-shell subscriber-form" id="subscriber-form">
+          <div class="form-grid">
+            <div>
+              <label for="subscriber-email">Email</label>
+              <input id="subscriber-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="subscriber-name">Name <span class="optional-copy">optional</span></label>
+              <input id="subscriber-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+            </div>
+            <div class="full">
+              <span class="field-label">Send me</span>
+              <label class="check-row"><input type="checkbox" name="articleNotifications" checked /> Article notifications when new public pieces go live</label>
+              <label class="check-row"><input type="checkbox" name="newsletters" checked /> Newsletters and reflection updates</label>
+              <label class="check-row"><input type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
+            </div>
+            <div class="full consent-box">
+              <label class="check-row consent-row"><input type="checkbox" name="consentAccepted" required /> I agree to receive the Thriving Dancer email updates I selected, and I understand I can manage preferences or unsubscribe at any time.</label>
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" type="submit">Save and continue</button>
+            <a class="btn secondary" href="offerings.html#workbook-signup">Workbook details</a>
+          </div>
+          <div class="status-banner" id="subscribe-status" hidden></div>
+        </form>
+        <div class="result-panel" id="confirm-panel" hidden>
+          <span class="mini-kicker">One more step</span>
+          <h3>Confirm this subscription</h3>
+          <p>A branded Thriving Dancer confirmation email should arrive after signup. This on-page button stays here as the fallback path if you are already holding a valid confirmation link.</p>
+          <div class="cta-row">
+            <button class="btn primary" id="confirm-subscription-button" type="button">Confirm my subscription</button>
+          </div>
+          <div class="status-banner" id="confirm-status" hidden></div>
+        </div>
+        <div class="result-panel" id="welcome-panel" hidden>
+          <span class="mini-kicker">You are in</span>
+          <h3>Welcome to Thriving Dancer</h3>
+          <p id="welcome-copy">Your subscription is active. Your welcome email and preferences links should now be in your inbox, and your portal is ready below.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="articles.html">Browse articles</a>
+            <a class="btn secondary" href="offerings.html">See the workbook path</a>
+          </div>
+          <div class="status-banner" id="welcome-status" hidden></div>
+        </div>
+      </section>
+
+      <section class="panel" id="email-access">
+        <span class="mini-kicker">Manage preferences</span>
+        <h2>Already subscribed?</h2>
+        <p>Use your secure link if you have it, or request a fresh access link using your email address.</p>
+        <form class="form-shell access-request-form" id="access-request-form">
+          <div class="form-grid">
+            <div>
+              <label for="access-email">Email</label>
+              <input id="access-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="cta-row">
+            <button class="btn secondary" type="submit">Prepare a fresh access link</button>
+          </div>
+          <div class="status-banner" id="access-request-status" hidden></div>
+        </form>
+        <div class="portal-shell" id="subscriber-portal" hidden>
+          <span class="mini-kicker">Preferences portal</span>
+          <h3 id="portal-heading">Manage your preferences</h3>
+          <p class="small-note" id="portal-email-note"></p>
+          <div class="status-banner" id="portal-focus-status" hidden></div>
+          <div class="cta-row" id="portal-focus-actions" hidden>
+            <button class="btn secondary" id="portal-focus-button" type="button"></button>
+          </div>
+          <form class="form-shell" id="portal-form">
+            <div class="form-grid">
+              <div>
+                <label for="portal-name">Name <span class="optional-copy">optional</span></label>
+                <input id="portal-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+              </div>
+              <div class="full">
+                <span class="field-label">Keep me subscribed to</span>
+                <label class="check-row"><input id="portal-articleNotifications" type="checkbox" name="articleNotifications" /> Article notifications when new public pieces go live</label>
+                <label class="check-row"><input id="portal-newsletters" type="checkbox" name="newsletters" /> Newsletters and reflection updates</label>
+                <label class="check-row"><input id="portal-offers" type="checkbox" name="offers" /> Workbook, preview, and offer announcements</label>
+              </div>
+            </div>
+            <div class="cta-row">
+              <button class="btn primary" type="submit">Update preferences</button>
+              <button class="btn ghost" id="unsubscribe-button" type="button">Unsubscribe from all emails</button>
+            </div>
+            <div class="status-banner" id="portal-status" hidden></div>
+          </form>
+        </div>
+        <div class="related-box" style="margin-top:18px;">
+          <span class="mini-kicker">Workbook lane</span>
+          <h3>Want the workbook updates specifically?</h3>
+          <p>Turn on workbook and offer announcements here, then use the workbook page for the fuller context and promise.</p>
+          <div class="link-row"><a href="offerings.html#workbook-signup">Workbook details</a><a href="offerings.html">Open offerings</a></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="panel privacy-panel">
       <div class="section-head">
-        <div class="eyebrow">Stay connected</div>
-        <h2>Prefer email over checking back manually?</h2>
-        <p>Choose article alerts, newsletters, and workbook updates, then manage them from the links in your emails.</p>
+        <div class="eyebrow">Privacy and expectations</div>
+        <h2>Minimal data, clear consent, and a real unsubscribe path.</h2>
       </div>
-      <div class="related-box">
-        <span class="mini-kicker">Email updates</span>
-        <h3>Subscribe once, then keep only the updates you actually want.</h3>
-        <p>Get new public pieces, reflection notes, and workbook news without turning your inbox into noise.</p>
-        <div class="link-row"><a href="subscribe.html">Open email updates</a><a href="offerings.html">See the workbook lane</a></div>
+      <div class="info-points">
+        <div>• required: your email address</div>
+        <div>• optional: your name</div>
+        <div>• stored so the system can work: your preferences, consent timing, and lifecycle status</div>
+        <div>• secure access links are stored as hashes, not raw token values</div>
+        <div>• no decorative dead-end signup box; this is the same system used for real preference management</div>
       </div>
     </section>
 
@@ -101,7 +206,7 @@
       <div>
         <div class="site-footer-title">Thriving Dancer</div>
         <p>Reflection, support, and steadier next steps for dancers after hard class days.</p>
-        <p class="mini-note">A cleaner reviewable public layer for articles, workbook support, and email updates.</p>
+        <p class="mini-note">Made for dancers who want something clear, grounded, and useful after a hard class.</p>
       </div>
       <div>
         <div class="site-footer-title">Explore</div>
@@ -109,17 +214,22 @@
       </div>
       <div>
         <div class="site-footer-title">Email updates</div>
-        <p>Choose article alerts, newsletters, and workbook updates. Manage them from the links in your emails.</p>
-        <div class="site-footer-links"><a href="subscribe.html">Subscribe</a><a href="email-updates-privacy.html">Privacy</a></div>
+        <p>Join from the home page, then adjust article alerts, newsletters, and workbook updates any time.</p>
+        <div class="site-footer-links"><a href="public-hub.html#email-updates">Join updates</a><a href="public-hub.html#email-access">Manage preferences</a></div>
       </div>
     </div>
     <div class="site-footer-meta">
       <span><strong>Thriving Dancer</strong></span>
-      <span>Review pages</span>
+      <span>Customer-facing public preview</span>
     </div>
   </footer>
   </main>
-
+  <script>
+    window.TD_SUBSCRIBER_CONFIG = {
+      apiBase: 'http://127.0.0.1:8793/api/v1/subscribers'
+    };
+  </script>
+  <script src="subscription.js"></script>
   <script>
     (function () {
       const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -145,8 +255,7 @@
     })();
   </script>
 
-
-  <div id="review-gate-overlay">
+<div id="review-gate-overlay">
     <div id="review-gate-card">
       <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
       <h1>Enter passcode</h1>

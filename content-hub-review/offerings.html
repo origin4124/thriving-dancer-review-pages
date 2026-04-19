@@ -6,16 +6,6 @@
   <title>Thriving Dancer Offerings</title>
   <script>document.documentElement.classList.add('js-page-transition');</script>
   <link rel="stylesheet" href="site.css" />
-
-<style>
-#review-gate-overlay { position: fixed; inset: 0; background: rgba(34, 22, 40, 0.72); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 9999; }
-#review-gate-card { width: 100%; max-width: 420px; background: #ffffff; border: 1px solid #ead9e8; border-radius: 18px; padding: 24px; box-shadow: 0 18px 60px rgba(35, 23, 40, 0.22); font-family: Arial, Helvetica, sans-serif; color: #231728; }
-#review-gate-card h1 { margin: 0 0 10px; font-size: 24px; line-height: 1.2; }
-#review-gate-card p { margin: 0 0 14px; line-height: 1.6; color: #5f5365; }
-#review-gate-card input { width: 100%; padding: 12px 14px; border: 1px solid #ead9e8; border-radius: 12px; font-size: 16px; margin-bottom: 12px; box-sizing: border-box; }
-#review-gate-card button { width: 100%; padding: 12px 14px; border: 0; border-radius: 999px; background: linear-gradient(135deg,#b64f8e,#6f5fd6); color: #ffffff; font-size: 16px; font-weight: 700; cursor: pointer; }
-#review-gate-error { min-height: 20px; color: #b00020; font-size: 14px; margin-top: 10px; }
-</style>
 </head>
 <body>
   <main class="page">
@@ -30,7 +20,7 @@
       <a href="public-hub.html">Home</a>
       <a href="articles.html">Articles</a>
       <a href="offerings.html">Offerings</a>
-      <a href="subscribe.html">Email updates</a>
+      <a href="public-hub.html#email-updates">Email updates</a>
       <a href="about.html">About</a>
     </nav>
   </div>
@@ -46,7 +36,6 @@
     <p>A guided workbook for dancers who want more than inspiration — a steadier way to process corrections, recover from hard classes, and leave the studio with a clearer next step.</p>
     <div class="cta-row">
       <a class="btn primary" href="#workbook-signup">Join the workbook list</a>
-      <a class="btn secondary" href="subscribe.html">All email updates</a>
       <a class="btn secondary" href="articles.html">Read the articles first</a>
     </div>
     <div class="quote-card"><p>Built for the moment after class, when a dancer needs something clear enough to use and calm enough to trust.</p></div>
@@ -95,43 +84,15 @@
     <span class="mini-kicker">Join the workbook list</span>
     <h2>Get updates when the workbook opens for preview or release.</h2>
     <p>This sign-up is for dancers, parents, and supporters who want first access to workbook updates, preview details, and release news.</p>
-    <form class="form-shell" action="https://formspree.io/f/xvzvyddo" method="POST">
-      <input type="hidden" name="_subject" value="Thriving Dancer Workbook Signup" />
-      <input type="hidden" name="_next" value="http://127.0.0.1:8793/workbook-thank-you.html" />
-      <div class="form-grid">
-        <div>
-          <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" required />
-        </div>
-        <div>
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required />
-        </div>
-        <div>
-          <label for="role">I’m signing up as</label>
-          <select id="role" name="role">
-            <option>Dancer</option>
-            <option>Parent / family member</option>
-            <option>Teacher / studio support</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div>
-          <label for="interest">What do you want most?</label>
-          <input id="interest" name="interest" type="text" placeholder="Confidence, reflection prompts, parent support..." />
-        </div>
-        <div class="full">
-          <label for="notes">Anything you’d love the workbook to help with?</label>
-          <textarea id="notes" name="notes" placeholder="Optional"></textarea>
-        </div>
-      </div>
+    <div class="related-box">
+      <h3>The workbook list now runs through the same real preferences system as the rest of the public site.</h3>
+      <p>Choose workbook and offer updates, and keep a clear manage-preferences or unsubscribe path for later.</p>
       <div class="cta-row">
-        <button class="btn primary" type="submit">Join the workbook list</button>
-        <a class="btn secondary" href="about.html">Learn more about the project</a>
+        <a class="btn primary" href="public-hub.html#email-updates">Open the email updates form</a>
+        <a class="btn secondary" href="public-hub.html#email-access">Manage existing preferences</a>
       </div>
-      <p class="small-note">By signing up, you’ll receive workbook updates and related Thriving Dancer news. The current live form endpoint is powered by Formspree.</p>
-    </form>
-    <p class="small-note" style="margin-top:14px;">Need the broader subscriber path instead of workbook-only updates? <a href="subscribe.html">Open the public email-updates page</a>.</p>
+      <p class="small-note">Use the email updates page to opt into workbook and offer announcements with clear consent and a real unsubscribe flow.</p>
+    </div>
   </section>
 </section>
 
@@ -140,7 +101,7 @@
       <div>
         <div class="site-footer-title">Thriving Dancer</div>
         <p>Reflection, support, and steadier next steps for dancers after hard class days.</p>
-        <p class="mini-note">A cleaner reviewable public layer for articles, workbook support, and email updates.</p>
+        <p class="mini-note">Made for dancers who want something clear, grounded, and useful after a hard class.</p>
       </div>
       <div>
         <div class="site-footer-title">Explore</div>
@@ -148,13 +109,13 @@
       </div>
       <div>
         <div class="site-footer-title">Email updates</div>
-        <p>Choose article alerts, newsletters, and workbook updates. Manage them from the links in your emails.</p>
-        <div class="site-footer-links"><a href="subscribe.html">Subscribe</a><a href="email-updates-privacy.html">Privacy</a></div>
+        <p>Choose article alerts, newsletters, and workbook updates. Adjust them any time.</p>
+        <div class="site-footer-links"><a href="public-hub.html#email-updates">Subscribe</a><a href="public-hub.html#email-access">Manage preferences</a></div>
       </div>
     </div>
     <div class="site-footer-meta">
       <span><strong>Thriving Dancer</strong></span>
-      <span>Review pages</span>
+      <span>Customer-facing public preview</span>
     </div>
   </footer>
   </main>
@@ -182,38 +143,6 @@
       });
     })();
   </script>
-
-  <div id="review-gate-overlay">
-    <div id="review-gate-card">
-      <div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b64f8e;font-weight:700;margin-bottom:10px;">Review access</div>
-      <h1>Enter passcode</h1>
-      <p>This public-content-hub review set is lightly gated so only the intended reviewer opens it. Enter the passcode from the message to continue.</p>
-      <input id="review-passcode" type="password" placeholder="Passcode" autocomplete="off" />
-      <button id="review-passcode-submit" type="button">Open review pages</button>
-      <div id="review-gate-error"></div>
-    </div>
-  </div>
-  <script>
-    (function () {
-      const PASSCODE = 'morning';
-      const STORAGE_KEY = 'td-content-hub-review-gate-2026-04-17';
-      const overlay = document.getElementById('review-gate-overlay');
-      const input = document.getElementById('review-passcode');
-      const button = document.getElementById('review-passcode-submit');
-      const error = document.getElementById('review-gate-error');
-      function unlock() { overlay.style.display = 'none'; }
-      if (sessionStorage.getItem(STORAGE_KEY) === 'ok') { unlock(); return; }
-      button.addEventListener('click', function () {
-        if ((input.value || '').trim() === PASSCODE) {
-          sessionStorage.setItem(STORAGE_KEY, 'ok');
-          unlock();
-        } else {
-          error.textContent = 'That passcode is not correct.';
-          input.focus();
-        }
-      });
-      input.addEventListener('keydown', function (event) { if (event.key === 'Enter') button.click(); });
-    })();
-  </script>
 </body>
 </html>
+
